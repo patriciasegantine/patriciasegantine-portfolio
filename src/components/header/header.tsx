@@ -51,7 +51,7 @@ export const Header = () => {
   }, [windowWidth]);
   
   return (
-    <HeaderContainer isMenuFixed={isMenuFixed}>
+    <HeaderContainer fixed={isMenuFixed}>
       <HeaderContent>
         <Logo src={logo} alt="logo" style={{width: '40px'}}/>
         {
@@ -59,7 +59,7 @@ export const Header = () => {
             ? <MenuMobileContainer onClick={toggleMobileMenu}>
               <MenuMobile/>
             </MenuMobileContainer>
-            : <Nav isMobileOpen={false}/>
+            : <Nav mobile={isMobileOpen}/>
         }
       </HeaderContent>
     

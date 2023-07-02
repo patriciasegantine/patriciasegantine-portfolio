@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { theme } from "../../theme.ts";
 
-export const HeaderContainer = styled.header<{ isMenuFixed: boolean }>`
+export const HeaderContainer = styled.header<{ fixed: boolean }>`
 
   width: 100%;
   padding: ${theme["spacing-regular"]};
@@ -12,7 +12,7 @@ export const HeaderContainer = styled.header<{ isMenuFixed: boolean }>`
   grid-area: header;
 
   ${(props) =>
-          props.isMenuFixed && css`
+          props.fixed && css`
             position: fixed;
             backdrop-filter: blur(20px);
             box-shadow: ${theme["shadow-primary"]};
@@ -32,14 +32,14 @@ export const Logo = styled.img`
   height: 40px;
 `
 
-export const NavContainer = styled.nav<{ isMobile: boolean }>`
+export const NavContainer = styled.nav<{ mobile: boolean }>`
   display: flex;
   column-gap: 8px;
   justify-content: flex-end;
 
 
   ${(props) =>
-          props.isMobile && css`
+          props.mobile && css`
             flex-direction: column;
           `}
 `

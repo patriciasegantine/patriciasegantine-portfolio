@@ -20,18 +20,18 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const SectionContainer = styled.section<{ isFlex?: boolean }>`
+export const SectionContainer = styled.section<{ flex?: boolean }>`
 
   max-width: ${theme['container']};
   margin: ${theme["spacing-regular"]} auto;
-  padding: 64px;
+  padding: 0 64px;
 
   @media (min-width: ${theme["laptop"]}px) {
     padding: 0;
   }
 
   ${(props) =>
-          props.isFlex && css`
+          props.flex && css`
             display: flex;
             flex-direction: column;
 
