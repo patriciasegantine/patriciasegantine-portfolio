@@ -49,7 +49,7 @@ export const MenuMobileContainer = styled.div`
 
 export const Link = styled.span<{ active: boolean }>`
   display: inline-block;
-  font-size: 12px;
+  font-size: ${theme["font-size-xs"]};
   text-transform: uppercase;
   padding: 5px 10px;
   cursor: pointer;

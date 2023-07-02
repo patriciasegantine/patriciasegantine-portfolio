@@ -1,10 +1,14 @@
 import { MainContainer } from "./main-content.styles.ts";
-import { Aside } from "../components/aside/aside.tsx";
+import { About } from "../components/about/about.tsx";
+import { LeftAside } from "../components/aside/left-aside.tsx";
+import { RightAside } from "../components/aside/right-aside.tsx";
 
 export const MainContent = () => {
   return (
     <MainContainer>
-      <Aside/>
+      <LeftAside/>
+      <RightAside/>
+      <About/>
     </MainContainer>
   );
 };

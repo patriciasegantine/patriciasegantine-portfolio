@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: ${theme["font-primary"]};
+    font-size: ${theme["font-size-m"]};
     background: ${theme["background-color-2"]};
     color: ${theme['color-neutral-light']};
     -webkit-font-smoothing: antialiased;
@@ -22,14 +23,21 @@ export const GlobalStyle = createGlobalStyle`
 export const SectionContainer = styled.section<{ isFlex?: boolean }>`
 
   max-width: ${theme['container']};
-  margin: ${theme["spacing-big"]} auto;
+  margin: ${theme["spacing-regular"]} auto;
+  padding: 64px;
+
+  @media (min-width: ${theme["laptop"]}px) {
+    padding: 0;
+  }
 
   ${(props) =>
           props.isFlex && css`
+            display: flex;
+            flex-direction: column;
 
             @media (min-width: ${theme["laptop"]}px) {
-              display: flex;
-              column-gap: ${theme["spacing-regular"]};
+              flex-direction: row;
+              column-gap: ${theme["spacing-big"]};
               justify-content: space-between;
             }
           `
