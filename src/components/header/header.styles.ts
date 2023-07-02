@@ -2,9 +2,7 @@ import styled, { css } from "styled-components";
 import { theme } from "../../theme.ts";
 
 export const HeaderContainer = styled.header<{ isMenuFixed: boolean }>`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   width: 100%;
   padding: ${theme["spacing-regular"]};
   font-family: ${theme["font-secondary"]};
@@ -19,6 +17,14 @@ export const HeaderContainer = styled.header<{ isMenuFixed: boolean }>`
             backdrop-filter: blur(20px);
             box-shadow: ${theme["shadow-primary"]};
           `}
+`
+
+export const HeaderContent = styled.div`
+  max-width: ${theme['container']};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 `
 
 export const Logo = styled.img`

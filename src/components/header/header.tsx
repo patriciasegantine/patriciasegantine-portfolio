@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HeaderContainer, Logo, MenuMobileContainer } from "./header.styles.ts";
+import { HeaderContainer, HeaderContent, Logo, MenuMobileContainer } from "./header.styles.ts";
 import { theme } from "../../theme.ts";
 import { MenuMobile } from "../../assets/icon/menu-mobile.tsx";
 import { Nav } from "../../components/nav/nav.tsx";
@@ -52,15 +52,16 @@ export const Header = () => {
   
   return (
     <HeaderContainer isMenuFixed={isMenuFixed}>
-      <Logo src={logo} alt="logo" style={{width: '40px'}}/>
-      
-      {
-        showMobileMenu
-          ? <MenuMobileContainer onClick={toggleMobileMenu}>
-            <MenuMobile/>
-          </MenuMobileContainer>
-          : <Nav isMobileOpen={false}/>
-      }
+      <HeaderContent>
+        <Logo src={logo} alt="logo" style={{width: '40px'}}/>
+        {
+          showMobileMenu
+            ? <MenuMobileContainer onClick={toggleMobileMenu}>
+              <MenuMobile/>
+            </MenuMobileContainer>
+            : <Nav isMobileOpen={false}/>
+        }
+      </HeaderContent>
     
     </HeaderContainer>
   );
