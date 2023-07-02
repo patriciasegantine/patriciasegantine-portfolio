@@ -1,15 +1,20 @@
-import { GlobalStyle, GridContainer } from "./global-styles.ts";
-import { Header } from "./Components/header/header/header.tsx";
+import { GlobalStyle } from "./globa.styles.ts";
+import { MainContent } from "./main/main-content.tsx";
+import styled from "styled-components";
+import { Header } from "./components/header/header.tsx";
 
 function App() {
   
+  const Container = styled.div`
+    height: 100vh;
+  `
+  
   return (
-    <>
+    <Container>
       <GlobalStyle/>
-      <GridContainer>
-        <Header/>
-      </GridContainer>
-    </>
+      <Header/>
+      <MainContent/>
+    </Container>
   )
 }
 

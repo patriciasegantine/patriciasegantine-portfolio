@@ -1,22 +1,24 @@
-import styled from "styled-components";
-import { theme } from "../../../theme.ts";
+import styled, { css } from "styled-components";
+import { theme } from "../../theme.ts";
 
-export const HeaderContainer = styled.header<{ fixed: boolean }>`
+export const HeaderContainer = styled.header<{ isMenuFixed: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: ${theme["spacing-regular"]};
-
   font-family: ${theme["font-secondary"]};
-
-  position: ${((props) => props.fixed ? 'fixed' : 'relative')};
-  backdrop-filter: ${((props) => props.fixed ? 'blur(15px)' : 'none')};
-  box-shadow: ${((props) => props.fixed ? theme["shadow-primary"] : 'none')};
   transition: 0.3s;
   top: 0;
   z-index: 999;
   grid-area: header;
+
+  ${(props) =>
+          props.isMenuFixed && css`
+            position: fixed;
+            backdrop-filter: blur(20px);
+            box-shadow: ${theme["shadow-primary"]};
+          `}
 `
 
 export const Logo = styled.img`
@@ -24,11 +26,19 @@ export const Logo = styled.img`
   height: 40px;
 `
 
-export const Nav = styled.nav`
+export const NavContainer = styled.nav<{ isMobile: boolean }>`
   display: flex;
   column-gap: 8px;
   justify-content: flex-end;
 
+
+  ${(props) =>
+          props.isMobile && css`
+            flex-direction: column;
+          `}
+`
+
+export const MenuMobileContainer = styled.div`
 `
 
 export const Link = styled.span<{ active: boolean }>`
