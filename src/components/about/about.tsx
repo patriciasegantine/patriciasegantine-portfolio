@@ -1,24 +1,24 @@
 import img from '../../assets/img/perfil-img.png'
-import { AboutContainer, AboutContent, ImgPerfil, InfoPerfil, TitlePerfil } from "./about.styles.ts";
+import { AboutContainer, AboutContent, ImgContent, ImgPerfil, InfoPerfil, TitlePerfil } from "./about.styles.ts";
+import { Destaque, Title } from "../../globa.styles.ts";
 
 export const About = () => {
   
   return (
-    <AboutContainer flex={true}>
+    <AboutContainer id="about">
       <AboutContent>
         <InfoPerfil>
           <TitlePerfil>
-            <h3>Welcome to my world</h3>
-            <h1>Hi, I’m
+            <Title>Hi, I’m
               <span>Patricia</span>
-            </h1>
-            <h2>a Frontend Developer</h2>
+            </Title>
+            <Destaque>a Frontend Developer</Destaque>
           </TitlePerfil>
           
           <p>
             Professional and dedicated web developer who is passionate about technologies and innovation. I’m a focused
             on
-            developing web solutions traying making a difference in people's lives through technology, with more than 4
+            developing web solutions trying making a difference in people's lives through technology, with more than 4
             years
             of experience in B2B and B2C project development.
           </p>
@@ -33,7 +33,10 @@ export const About = () => {
         </InfoPerfil>
         
         <ImgPerfil>
-          <img src={img} alt=""/>
+          
+          <ImgContent>
+            <img src={img} alt=""/>
+          </ImgContent>
         </ImgPerfil>
       </AboutContent>
     </AboutContainer>

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle, css } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { theme } from './theme.ts'
 
 export const GlobalStyle = createGlobalStyle`
@@ -13,34 +13,62 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: ${theme["font-primary"]};
     font-size: ${theme["font-size-m"]};
-    background: ${theme["background-color-2"]};
+    line-height: ${theme["line-height-l"]};
+    background: ${theme["background-color-1"]};
     color: ${theme['color-neutral-light']};
     -webkit-font-smoothing: antialiased;
-    height: 2000px;
+  }
+
+  .vertical-timeline::before {
+    background: ${theme["color-neutral-light"]};
+  }
+
+  .vertical-timeline-element-icon {
+    box-shadow: 0 0 0 4px ${theme ["color-neutral-light"]};
   }
 `
 
-export const SectionContainer = styled.section<{ flex?: boolean }>`
+export const SectionContainer = styled.section`
 
   max-width: ${theme['container']};
-  margin: ${theme["spacing-regular"]} auto;
-  padding: 0 64px;
+  margin: ${theme["spacing-big"]} auto;
+  position: relative;
+  border-bottom: 1px solid #3c3e41;
+  padding-bottom: 64px;
 
-  @media (min-width: ${theme["laptop"]}px) {
-    padding: 0;
-  }
+`
+export const Title = styled.h1`
+  font-family: ${theme["font-secondary"]};
+  font-size: ${theme["font-size-xxl"]};
+  color: ${theme["color-white"]};
+  font-weight: 700;
+`
 
-  ${(props) =>
-          props.flex && css`
-            display: flex;
-            flex-direction: column;
+export const Subtitle = styled.h3`
+  font-family: ${theme["font-secondary"]};
+  font-size: ${theme["font-size-s"]};
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: ${theme["spacing-small"]};
+  color: ${theme["color-highlight"]};
+  //text-align: center;
+`
 
-            @media (min-width: ${theme["laptop"]}px) {
-              flex-direction: row;
-              column-gap: ${theme["spacing-big"]};
-              justify-content: space-between;
-            }
-          `
+export const SectionTitle = styled.h2`
+  font-family: ${theme["font-secondary"]};
+  font-size: ${theme["font-size-xxl"]};
+  color: ${theme["color-white"]};
+  //text-align: center;
+  font-weight: 700;
+  margin-top: ${theme["spacing-regular"]};
+`
 
-  }
+export const Destaque = styled.h4`
+  font-family: ${theme["font-secondary"]};
+  font-size: ${theme["font-size-s"]};
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: ${theme["spacing-small"]};
 `

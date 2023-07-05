@@ -2,16 +2,12 @@ import styled from "styled-components";
 import { SectionContainer } from "../../globa.styles.ts";
 import { theme } from "../../theme.ts";
 
-export const AboutContainer = styled(SectionContainer)<{ flex: boolean }>`
-  @media (max-width: ${theme["laptop"]}px) {
-    flex-direction: column-reverse;
-  }
+export const AboutContainer = styled(SectionContainer)`
 
 `
 
 export const AboutContent = styled.div`
   display: flex;
-  padding-bottom: ${theme["spacing-big"]};
 
   @media (max-width: ${theme["laptop"]}px) {
     flex-direction: column-reverse;
@@ -48,13 +44,6 @@ export const TitlePerfil = styled.div`
 
   margin-bottom: ${theme["spacing-regular"]};
 
-  h1 {
-    font-family: ${theme["font-secondary"]};
-    font-size: ${theme["font-size-xxl"]};
-    color: ${theme["color-white"]};
-    font-weight: 700;
-    margin-bottom: ${theme["spacing-small"]};
-  }
 
   h2 {
     font-family: ${theme["font-secondary"]};
@@ -62,38 +51,39 @@ export const TitlePerfil = styled.div`
     letter-spacing: 3px;
     text-transform: uppercase;
     font-weight: 500;
-    margin-bottom: ${theme["spacing-regular"]};
+    margin-bottom: ${theme["spacing-small"]};
   }
 
-  h3 {
-    font-family: ${theme["font-secondary"]};
-    font-size: ${theme["font-size-s"]};
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-bottom: ${theme["spacing-regular"]};
-  }`
+`
 
 export const ImgPerfil = styled(PerfilBox)`
-  position: relative;
   display: flex;
   flex: 40;
+  padding: ${theme["spacing-regular"]};
+  justify-content: center;
 
-  &:before {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: calc(100% - 130px);
-    content: "";
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    background: var(--background-color-1);
-    box-shadow: ${theme['shadow-primary']};
-    border-radius: ${theme["border-radius-primary"]};
+
+  @media (max-width: ${theme["laptop"]}px) {
+    margin-bottom: ${theme["spacing-regular"]};
   }
+`
+
+export const ImgContent = styled.div`
+  position: relative;
+  height: 400px;
+  width: 400px;
+  align-self: flex-end;
+  padding: ${theme["spacing-regular"]};
+
+  background: ${theme['background-color-3']};
+  box-shadow: ${theme['shadow-primary']};
+  border-radius: ${theme["border-radius-primary"]};
 
   img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
     width: 300px;
     height: 450px;
     margin: 0 auto;

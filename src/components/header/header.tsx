@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { HeaderContainer, HeaderContent, Logo, MenuMobileContainer } from "./header.styles.ts";
 import { theme } from "../../theme.ts";
 import { MenuMobile } from "../../assets/icon/menu-mobile.tsx";
-import { Nav } from "../../components/nav/nav.tsx";
+import { Nav } from "../nav/nav.tsx";
 import logo from '../../assets/img/logo.png'
 
 export const Header = () => {

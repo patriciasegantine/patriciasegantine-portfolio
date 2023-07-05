@@ -6,13 +6,17 @@ export const theme = {
   // 'color-highlight': '#ff014f',
   
   'color-neutral-light': '#c4cfde',
-  'color-neutral-dark': '#161C45',
-  'color-primary': '#001D42',
   
   'color-social-media': '#757575',
   
-  'background-color-1': 'linear-gradient(145deg, #1e2024, #23272b)',
-  'background-color-2': '#212428',
+  'color-gray-dark': '#343a40',
+  
+  'color-line': '#3c3e41',
+  
+  'background-color-1': '#212428',
+  'background-color-2': 'linear-gradient(145deg, #1e2024, #23272b)',
+  // 'background-color-3': 'linear-gradient(to right bottom, #212428, #16181c)',
+  'background-color-3': '#212428',
   
   // font family
   'font-primary': 'Poppins, sans-serif',

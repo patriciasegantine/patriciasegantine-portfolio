@@ -10,6 +10,7 @@ export const HeaderContainer = styled.header<{ fixed: boolean }>`
   top: 0;
   z-index: 999;
   grid-area: header;
+  border-bottom: 1px solid ${theme["color-line"]};
 
   ${(props) =>
           props.fixed && css`
@@ -47,7 +48,7 @@ export const NavContainer = styled.nav<{ mobile: boolean }>`
 export const MenuMobileContainer = styled.div`
 `
 
-export const Link = styled.span<{ active: boolean }>`
+export const Link = styled.a<{ active: boolean }>`
   display: inline-block;
   font-size: ${theme["font-size-xs"]};
   text-transform: uppercase;
