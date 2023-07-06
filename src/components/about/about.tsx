@@ -1,6 +1,6 @@
 import img from '../../assets/img/perfil-img.png'
 import { AboutContainer, AboutContent, ImgContent, ImgPerfil, InfoPerfil, TitlePerfil } from "./about.styles.ts";
-import { Destaque, Title } from "../../globa.styles.ts";
+import { Destaque, Title } from "../../global.styles.ts";
 
 export const About = () => {
   

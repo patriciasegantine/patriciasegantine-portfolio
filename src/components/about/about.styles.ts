@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SectionContainer } from "../../globa.styles.ts";
+import { SectionContainer } from "../../global.styles.ts";
 import { theme } from "../../theme.ts";
 
 export const AboutContainer = styled(SectionContainer)`

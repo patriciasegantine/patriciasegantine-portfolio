@@ -1,4 +1,4 @@
-import { GlobalStyle } from "./globa.styles.ts";
+import { GlobalStyle } from "./global.styles.ts";
 import { MainContent } from "./main/main-content.tsx";
 import styled from "styled-components";
 import { Header } from "./components/header/header.tsx";
