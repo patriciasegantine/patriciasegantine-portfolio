@@ -8,8 +8,10 @@ import {
   ToolsBox,
 } from './portfolio.styles.ts'
 import { SectionTitle, Subtitle } from '../../global.styles.ts'
-import edp from '../../assets/img/edp.png'
-import vertem from '../../assets/img/vertem.png'
+import projectOne from '../../assets/img/project-one.jpg'
+import projectTwo from '../../assets/img/project-two.jpg'
+import projectThree from '../../assets/img/project-three.jpg'
+import projectFour from '../../assets/img/project-four.jpg'
 
 import reactIcon from '../../assets/tools/react.svg'
 import tailwindCSS from '../../assets/tools/tailwind-css.svg'
@@ -19,11 +21,13 @@ import javaScript from '../../assets/tools/javascript-js.svg'
 import angular from '../../assets/tools/angular.svg'
 import styledComponent from '../../assets/tools/styled-component.svg'
 import typescript from '../../assets/tools/typescript.svg'
+import sass from '../../assets/tools/sass.svg'
 
 interface myProjectsInterface {
   name: string
   img: string
   tools: {
+    id: string
     title: string
     src: string
   }[]
@@ -31,39 +35,39 @@ interface myProjectsInterface {
 
 const myProjects: myProjectsInterface[] = [
   {
-    name: 'EDP',
-    img: edp,
+    name: 'Project One',
+    img: projectOne,
     tools: [
-      {title: 'css', src: reactIcon},
-      {title: 'css', src: tailwindCSS},
-      {title: 'css', src: nodeJS},
+      {id: '01', title: 'css', src: reactIcon},
+      {id: '02', title: 'css', src: tailwindCSS},
+      {id: '03', title: 'css', src: nodeJS},
     ],
   },
   {
-    name: 'Vertem',
-    img: vertem,
+    name: 'Project Two',
+    img: projectTwo,
     tools: [
-      {title: 'css', src: git},
-      {title: 'css', src: javaScript},
-      {title: 'css', src: angular},
+      {id: '01', title: 'css', src: git},
+      {id: '02', title: 'css', src: javaScript},
+      {id: '03', title: 'css', src: angular},
     ],
   },
   {
-    name: 'Tradeback',
-    img: vertem,
+    name: 'Project Three',
+    img: projectThree,
     tools: [
-      {title: 'css', src: reactIcon},
-      {title: 'css', src: styledComponent},
-      {title: 'css', src: typescript},
+      {id: '01', title: 'css', src: reactIcon},
+      {id: '02', title: 'css', src: styledComponent},
+      {id: '03', title: 'css', src: typescript},
     ],
   },
   {
-    name: 'EDP',
-    img: edp,
+    name: 'Project Four',
+    img: projectFour,
     tools: [
-      {title: 'css', src: reactIcon},
-      {title: 'css', src: reactIcon},
-      {title: 'css', src: reactIcon},
+      {id: '01', title: 'css', src: sass},
+      {id: '02', title: 'css', src: reactIcon},
+      {id: '03', title: 'css', src: reactIcon},
     ],
   },
 ]
@@ -79,19 +83,19 @@ export const Portfolio = () => {
       <CardContainer>
         {myProjects?.map((project) => {
           return (
-            <Card>
+            <Card key={project.name}>
               <DescriptionBox>
                 <h2>{project.name}</h2>
               </DescriptionBox>
               
-              <CardBoxImg>
+              <CardBoxImg onClick={() => alert("I'll Open the project Modal")}>
                 <img src={project.img} alt={project.name}/>
               </CardBoxImg>
               
               <ToolsBox>
                 {project.tools.map((tool) => {
                   return (
-                    <IconContainer>
+                    <IconContainer key={tool.id}>
                       <img src={tool.src} alt={tool.title} title={tool.title}/>
                     </IconContainer>
                   )

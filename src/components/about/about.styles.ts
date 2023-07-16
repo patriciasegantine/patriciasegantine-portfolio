@@ -3,13 +3,14 @@ import { SectionContainer } from "../../global.styles.ts";
 import { theme } from "../../theme.ts";
 
 export const AboutContainer = styled(SectionContainer)`
-
+  margin-top: ${theme["spacing-extra-big"]};
 `
 
 export const AboutContent = styled.div`
   display: flex;
+  gap: ${theme["spacing-small"]};
 
-  @media (max-width: ${theme["laptop"]}px) {
+  @media (max-width: ${theme["tablet"]}) {
     flex-direction: column-reverse;
   }
 
@@ -17,7 +18,6 @@ export const AboutContent = styled.div`
 
 const PerfilBox = styled.span`
   flex: 1;
-  padding: ${theme["spacing-regular"]}
 `
 
 export const InfoPerfil = styled(PerfilBox)`
@@ -59,11 +59,9 @@ export const TitlePerfil = styled.div`
 export const ImgPerfil = styled(PerfilBox)`
   display: flex;
   flex: 40;
-  padding: ${theme["spacing-regular"]};
   justify-content: center;
 
-
-  @media (max-width: ${theme["laptop"]}px) {
+  @media (max-width: ${theme["laptop"]}) {
     margin-bottom: ${theme["spacing-regular"]};
   }
 `
@@ -73,7 +71,6 @@ export const ImgContent = styled.div`
   height: 400px;
   width: 400px;
   align-self: flex-end;
-  padding: ${theme["spacing-regular"]};
 
   background: ${theme['background-color-3']};
   box-shadow: ${theme['shadow-primary']};
@@ -91,8 +88,12 @@ export const ImgContent = styled.div`
     border-radius: ${theme["border-radius-primary"]}
   }
 
-  @media (max-width: ${theme["laptop"]}px) {
-    margin-bottom: ${theme["spacing-regular"]};
+  @media (max-width: ${theme["laptop"]}) {
+    margin-top: ${theme["spacing-extra-big"]};
   }
 
+`
+
+export const SocialMediaContainer = styled.div`
+  margin-top: ${theme["spacing-regular"]};
 `

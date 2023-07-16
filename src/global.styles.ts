@@ -35,6 +35,11 @@ export const SectionContainer = styled.section`
   position: relative;
   border-bottom: 1px solid #3c3e41;
   padding-bottom: 64px;
+  padding-left: ${theme["spacing-small"]};
+  padding-right: ${theme["spacing-small"]};
+
+  @media (max-width: ${theme.tablet}) {
+  }
 
 `
 export const Title = styled.h1`

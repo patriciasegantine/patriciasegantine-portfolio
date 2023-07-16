@@ -1,6 +1,15 @@
 import img from '../../assets/img/perfil-img.png'
-import { AboutContainer, AboutContent, ImgContent, ImgPerfil, InfoPerfil, TitlePerfil } from "./about.styles.ts";
-import { Destaque, Title } from "../../global.styles.ts";
+import {
+  AboutContainer,
+  AboutContent,
+  ImgContent,
+  ImgPerfil,
+  InfoPerfil,
+  SocialMediaContainer,
+  TitlePerfil
+} from "./about.styles.ts";
+import { Destaque, Subtitle, Title } from "../../global.styles.ts";
+import { SocialMedia } from "../social-media/social-media.tsx";
 
 export const About = () => {
   
@@ -29,16 +38,24 @@ export const About = () => {
           
           <p>This year my main goal is to deepen in the study of Angular and Node.js. ❤️
           </p>
+          
+          <SocialMediaContainer>
+            <Subtitle id="portfolio">
+              My socials media
+            </Subtitle>
+            <SocialMedia/>
+          </SocialMediaContainer>
         
         </InfoPerfil>
         
         <ImgPerfil>
-          
           <ImgContent>
             <img src={img} alt=""/>
           </ImgContent>
         </ImgPerfil>
       </AboutContent>
+    
+    
     </AboutContainer>
   );
 };

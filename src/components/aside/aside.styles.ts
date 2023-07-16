@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../theme.ts";
 
 export const AsideContainer = styled.aside`
   position: absolute;
@@ -20,17 +19,6 @@ export const RightAsideContent = styled.div`
   cursor: pointer;
 
   &:hover {
-    opacity: .5;
-  }
-`
-
-export const SocialBox = styled.div`
-
-  display: flex;
-  flex-direction: column;
-  row-gap: ${theme["spacing-small"]};
-
-  a:hover {
     opacity: .5;
   }
 `

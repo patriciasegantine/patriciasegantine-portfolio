@@ -9,10 +9,14 @@ export const CardContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: ${theme['spacing-big']};
   padding-top: ${theme['spacing-regular']};
+
+  @media (max-width: ${theme.tablet}) {
+    grid-template-columns: 1fr;
+  }
+
 `
 
 export const Card = styled.div`
-  //height: 400px;
   width: 100%;
   padding: ${theme['spacing-regular']};
 
@@ -27,11 +31,17 @@ export const DescriptionBox = styled.div``
 
 export const CardBoxImg = styled.div`
   width: 100%;
-  //height: 250px;
 
   img {
     width: 100%;
-    height: 250px;
+    border-radius: 10px 100px;
+    padding: 36px;
+
+    &:hover {
+      scale: 1.1;
+      transition: .5s;
+      cursor: pointer;
+    }
   }
 `
 
@@ -46,11 +56,12 @@ export const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 12px;
   border-radius: 50%;
   background: ${theme['background-color-1']};
   border: 2px solid ${theme['color-line']};
   box-shadow: ${theme['shadow-primary']};
+  opacity: .8;
 
   img {
     width: 30px;

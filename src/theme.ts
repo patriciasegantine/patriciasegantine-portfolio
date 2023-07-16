@@ -50,10 +50,10 @@ export const theme = {
 
 //   breakpoint
   
-  'mobile': 480,
-  'tablet': 768,
-  'laptop': 1024,
-  'desktop': 1200,
+  'mobile': '480px',
+  'tablet': '768px',
+  'laptop': '1024px',
+  'desktop': '1200px',
   
   'container': '1100px'
 }
