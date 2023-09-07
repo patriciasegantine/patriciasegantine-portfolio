@@ -8,10 +8,10 @@ import {
   ToolsBox,
 } from './portfolio.styles.ts'
 import { SectionTitle, Subtitle } from '../../global.styles.ts'
-import projectOne from '../../assets/img/project-one.jpg'
-import projectTwo from '../../assets/img/project-two.jpg'
-import projectThree from '../../assets/img/project-three.jpg'
-import projectFour from '../../assets/img/project-four.jpg'
+import projectOne from '../../assets/img/projects/project-one.jpg'
+import projectTwo from '../../assets/img/projects/project-two.jpg'
+import projectThree from '../../assets/img/projects/project-three.jpg'
+import projectFour from '../../assets/img/projects/project-four.jpg'
 
 import reactIcon from '../../assets/tools/react.svg'
 import tailwindCSS from '../../assets/tools/tailwind-css.svg'

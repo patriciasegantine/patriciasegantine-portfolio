@@ -2,7 +2,7 @@ import React from "react";
 import { theme } from "../../theme.ts";
 import { IconInterface } from "../../type/icons-types.ts";
 
-export const Instagram: React.FC<IconInterface> = ({size = '30px', color = theme["color-neutral-light"]}) => {
+export const Instagram: React.FC<IconInterface> = ({size = '40px', color = theme["color-neutral-light"]}) => {
   return (
     <picture>
       <svg xmlns="http://www.w3.org/2000/svg"
