@@ -11,8 +11,8 @@ export const MainContent = () => {
       {/*<LeftAside/>*/}
       <RightAside/>
       <About/>
-      <Experience/>
       <Portfolio/>
+      <Experience/>
       <Nlw/>
     </MainContainer>
   );

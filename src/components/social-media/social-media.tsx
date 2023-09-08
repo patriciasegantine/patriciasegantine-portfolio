@@ -22,7 +22,7 @@ export const SocialMedia = () => {
       </a>
       
       <a
-        href="https://github.com/patriciasegantine"
+        href="https://www.instagram.com/patriciasegantine/"
         title={"Instagram"}
         target='_blank'
       >

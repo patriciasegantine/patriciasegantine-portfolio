@@ -4,75 +4,32 @@ import {
   CardContainer,
   DescriptionBox,
   IconContainer,
+  ItemBox,
+  LinkGitHub,
+  LinksBox,
+  LinksBoxItems,
+  ModalContent,
   PortfolioContainer,
+  TitleItem,
   ToolsBox,
 } from './portfolio.styles.ts'
 import { SectionTitle, Subtitle } from '../../global.styles.ts'
-import projectOne from '../../assets/img/projects/project-one.jpg'
-import projectTwo from '../../assets/img/projects/project-two.jpg'
-import projectThree from '../../assets/img/projects/project-three.jpg'
-import projectFour from '../../assets/img/projects/project-four.jpg'
 
-import reactIcon from '../../assets/tools/react.svg'
-import tailwindCSS from '../../assets/tools/tailwind-css.svg'
-import nodeJS from '../../assets/tools/node-js.svg'
-import git from '../../assets/tools/git.svg'
-import javaScript from '../../assets/tools/javascript-js.svg'
-import angular from '../../assets/tools/angular.svg'
-import styledComponent from '../../assets/tools/styled-component.svg'
-import typescript from '../../assets/tools/typescript.svg'
-import sass from '../../assets/tools/sass.svg'
-
-interface myProjectsInterface {
-  name: string
-  img: string
-  tools: {
-    id: string
-    title: string
-    src: string
-  }[]
-}
-
-const myProjects: myProjectsInterface[] = [
-  {
-    name: 'Project One',
-    img: projectOne,
-    tools: [
-      {id: '01', title: 'css', src: reactIcon},
-      {id: '02', title: 'css', src: tailwindCSS},
-      {id: '03', title: 'css', src: nodeJS},
-    ],
-  },
-  {
-    name: 'Project Two',
-    img: projectTwo,
-    tools: [
-      {id: '01', title: 'css', src: git},
-      {id: '02', title: 'css', src: javaScript},
-      {id: '03', title: 'css', src: angular},
-    ],
-  },
-  {
-    name: 'Project Three',
-    img: projectThree,
-    tools: [
-      {id: '01', title: 'css', src: reactIcon},
-      {id: '02', title: 'css', src: styledComponent},
-      {id: '03', title: 'css', src: typescript},
-    ],
-  },
-  {
-    name: 'Project Four',
-    img: projectFour,
-    tools: [
-      {id: '01', title: 'css', src: sass},
-      {id: '02', title: 'css', src: reactIcon},
-      {id: '03', title: 'css', src: reactIcon},
-    ],
-  },
-]
+import { useState } from "react";
+import { myProjects } from "./my-projects-obj.ts";
+import { ViewModal } from "../modal/view-modal.tsx";
+import { Tool, ToolBox } from "../modal/modal.styles.ts";
 
 export const Portfolio = () => {
+  
+  const [open, setOpen] = useState<boolean>(false);
+  const [projectIndex, setProjectIndex] = useState<number>(0);
+  
+  const handleOpen = (index: number) => {
+    setOpen(true)
+    setProjectIndex(index)
+  };
+  
   return (
     <PortfolioContainer>
       <SectionTitle id="portfolio">My Portfolio</SectionTitle>
@@ -81,14 +38,16 @@ export const Portfolio = () => {
       </Subtitle>
       
       <CardContainer>
-        {myProjects?.map((project) => {
+        {myProjects?.map((project, index) => {
           return (
             <Card key={project.name}>
               <DescriptionBox>
                 <h2>{project.name}</h2>
               </DescriptionBox>
               
-              <CardBoxImg onClick={() => alert("I'll Open the project Modal")}>
+              <CardBoxImg
+                onClick={() => handleOpen(index)}
+              >
                 <img src={project.img} alt={project.name}/>
               </CardBoxImg>
               
@@ -104,7 +63,66 @@ export const Portfolio = () => {
             </Card>
           )
         })}
+      
       </CardContainer>
+      
+      <ViewModal
+        open={open}
+        setOpen={setOpen}
+        title={myProjects[projectIndex]?.name}
+        modalContent={
+          <ModalContent>
+            <div>
+              <img src={myProjects[projectIndex]?.img} alt=""/>
+            </div>
+            
+            <div>
+              <ItemBox>
+                <TitleItem>Description:</TitleItem>
+                <span>{myProjects[projectIndex]?.description}</span>
+              </ItemBox>
+              
+              <ItemBox>
+                <TitleItem>Tools:</TitleItem>
+                
+                <span>
+                  {myProjects[projectIndex]?.tools.map((item, index) => {
+                    return (
+                      <ToolBox key={item.id}>
+                        <Tool>{item?.title}</Tool>
+                        <Tool>{index < myProjects[projectIndex]?.tools.length - 1 && '-'}</Tool>
+                      </ToolBox>
+                    )
+                  })
+                  }
+                </span>
+              </ItemBox>
+              
+              <ItemBox>
+                <LinksBox>
+                  <TitleItem>Links:</TitleItem>
+                  
+                  <LinksBoxItems>
+                    <LinkGitHub
+                      href={myProjects[projectIndex]?.urlGiHub}
+                      target={'_blank'}>
+                      Github
+                    </LinkGitHub>
+                    
+                    <LinkGitHub
+                      href={myProjects[projectIndex]?.urlGiHub}
+                      target={'_blank'}>
+                      Website
+                    </LinkGitHub>
+                  </LinksBoxItems>
+                
+                </LinksBox>
+              </ItemBox>
+            </div>
+          
+          </ModalContent>
+        }
+      />
     </PortfolioContainer>
   )
 }

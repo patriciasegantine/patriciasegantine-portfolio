@@ -19,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  .vertical-timeline {
+    width: 100%;
+  }
+
   .vertical-timeline::before {
     background: ${theme["color-neutral-light"]};
   }

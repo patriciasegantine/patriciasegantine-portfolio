@@ -2,7 +2,7 @@ import { CardBoxImg } from "../portifolio/portfolio.styles.ts";
 import React from "react";
 
 interface NlwCardsInterface {
-  content: string
+  content: any
 }
 
 export const NlwCards: React.FC<NlwCardsInterface> = ({content}) => {

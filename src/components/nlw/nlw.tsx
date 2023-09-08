@@ -31,7 +31,6 @@ export const Nlw = () => {
   
   return (
     <NLWContainer>
-      
       <SectionTitle id="portfolio">Next Level Week</SectionTitle>
       <Subtitle id="portfolio">
         This is a week of programming

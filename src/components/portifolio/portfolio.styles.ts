@@ -68,3 +68,54 @@ export const IconContainer = styled.div`
     height: 30px;
   }
 `
+
+export const ModalContent = styled.div`
+
+  display: flex;
+  column-gap: ${theme["spacing-small"]};
+
+  img {
+    height: 300px;
+    border-radius: ${theme["border-radius-primary"]};
+  }
+`
+
+export const ItemBox = styled.div`
+  margin-bottom: ${theme["spacing-small"]};
+  color: ${theme["color-social-media"]};
+`
+
+export const TitleItem = styled.span`
+  font-weight: 700;
+  padding-right: 1rem;
+  color: ${theme["color-white"]};
+
+`
+
+export const LinkGitHub = styled.a`
+  color: ${theme["color-social-media"]};
+
+  text-decoration: none;
+
+  &::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: ${theme['color-white']};
+
+  }
+
+  &:hover {
+    opacity: .6;
+    transition: .2s;
+  }
+`
+
+export const LinksBox = styled.div`
+  display: flex;
+`
+export const LinksBoxItems = styled.div`
+  display: flex;
+  column-gap: ${theme["spacing-small"]};
+`
