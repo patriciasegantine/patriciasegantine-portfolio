@@ -69,17 +69,6 @@ export const IconContainer = styled.div`
   }
 `
 
-export const ModalContent = styled.div`
-
-  display: flex;
-  column-gap: ${theme["spacing-small"]};
-
-  img {
-    height: 300px;
-    border-radius: ${theme["border-radius-primary"]};
-  }
-`
-
 export const ItemBox = styled.div`
   margin-bottom: ${theme["spacing-small"]};
   color: ${theme["color-social-media"]};
@@ -102,7 +91,7 @@ export const LinkGitHub = styled.a`
     content: "";
     width: 100%;
     height: 1px;
-    background: ${theme['color-white']};
+    background: ${theme['color-highlight']};
 
   }
 

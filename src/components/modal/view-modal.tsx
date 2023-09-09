@@ -2,7 +2,8 @@ import React from 'react';
 import { Box, Fade, Modal } from "@mui/material";
 import { theme } from "../../theme.ts";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
-import { ModalBody, ModalClose, ModalHeader, ModalTitle } from "./modal.styles.ts";
+import { ModalBody, ModalClose, ModalContent, ModalHeader, ModalTitle, Tool, ToolBox } from "./modal.styles.ts";
+import { ItemBox, LinkGitHub, LinksBox, LinksBoxItems, TitleItem } from "../portifolio/portfolio.styles.ts";
 
 const style = {
   position: 'absolute' as const,
@@ -22,10 +23,12 @@ interface ViewModal {
   open: boolean
   setOpen: React.Dispatch<boolean>
   title: string
-  modalContent: any
+  projects: any
+  projectIndex: number
+  isflex: boolean
 }
 
-export const ViewModal: React.FC<ViewModal> = ({open, setOpen, title, modalContent}) => {
+export const ViewModal: React.FC<ViewModal> = ({open, setOpen, title, projects, projectIndex, isflex = true}) => {
   
   const handleClose = () => setOpen(false);
   
@@ -46,7 +49,55 @@ export const ViewModal: React.FC<ViewModal> = ({open, setOpen, title, modalConte
           </ModalHeader>
           
           <ModalBody>
-            {modalContent}
+            <ModalContent isFlex={isflex}>
+              <div>
+                <img src={projects[projectIndex]?.img} alt=""/>
+              </div>
+              
+              <div>
+                <ItemBox>
+                  <TitleItem>Description:</TitleItem>
+                  <span>{projects[projectIndex]?.description}</span>
+                </ItemBox>
+                
+                <ItemBox>
+                  <TitleItem>Tools:</TitleItem>
+                  {
+                    projects[projectIndex]?.tools.map((item, index) => {
+                      return (
+                        <ToolBox key={item.id}>
+                          <Tool>{item?.title}</Tool>
+                          <Tool>{index < projects[projectIndex]?.tools.length - 1 && '-'}</Tool>
+                        </ToolBox>
+                      )
+                    })
+                  }
+                
+                </ItemBox>
+                
+                <ItemBox>
+                  <LinksBox>
+                    <TitleItem>Links:</TitleItem>
+                    
+                    <LinksBoxItems>
+                      <LinkGitHub
+                        href={projects[projectIndex]?.urlGiHub}
+                        target={'_blank'}>
+                        Github
+                      </LinkGitHub>
+                      
+                      <LinkGitHub
+                        href={projects[projectIndex]?.urlGiHub}
+                        target={'_blank'}>
+                        Website
+                      </LinkGitHub>
+                    </LinksBoxItems>
+                  
+                  </LinksBox>
+                </ItemBox>
+              </div>
+            
+            </ModalContent>
           </ModalBody>
           
           {/*<ModalFooter>*/}

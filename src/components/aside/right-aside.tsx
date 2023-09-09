@@ -1,5 +1,6 @@
 import { AsideContainer, RightAsideContent } from "./aside.styles.ts";
-import { UpTop } from "../../assets/icon/up-top.tsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUp } from "@fortawesome/free-solid-svg-icons";
 
 export const RightAside = () => {
   const scrollToTop = () => {
@@ -13,7 +14,7 @@ export const RightAside = () => {
     <AsideContainer>
       <RightAsideContent>
         <span onClick={scrollToTop}>
-          <UpTop/>
+          <FontAwesomeIcon icon={faCircleUp} size={"2x"}/>
         </span>
       </RightAsideContent>
     </AsideContainer>

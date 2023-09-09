@@ -4,13 +4,7 @@ import {
   CardContainer,
   DescriptionBox,
   IconContainer,
-  ItemBox,
-  LinkGitHub,
-  LinksBox,
-  LinksBoxItems,
-  ModalContent,
   PortfolioContainer,
-  TitleItem,
   ToolsBox,
 } from './portfolio.styles.ts'
 import { SectionTitle, Subtitle } from '../../global.styles.ts'
@@ -18,7 +12,6 @@ import { SectionTitle, Subtitle } from '../../global.styles.ts'
 import { useState } from "react";
 import { myProjects } from "./my-projects-obj.ts";
 import { ViewModal } from "../modal/view-modal.tsx";
-import { Tool, ToolBox } from "../modal/modal.styles.ts";
 
 export const Portfolio = () => {
   
@@ -32,7 +25,7 @@ export const Portfolio = () => {
   
   return (
     <PortfolioContainer>
-      <SectionTitle id="portfolio">My Portfolio</SectionTitle>
+      <SectionTitle id="portfolio">My Projects</SectionTitle>
       <Subtitle id="portfolio">
         Lorem ipsum dolor sit amet, consectetur adipisicing.
       </Subtitle>
@@ -70,58 +63,8 @@ export const Portfolio = () => {
         open={open}
         setOpen={setOpen}
         title={myProjects[projectIndex]?.name}
-        modalContent={
-          <ModalContent>
-            <div>
-              <img src={myProjects[projectIndex]?.img} alt=""/>
-            </div>
-            
-            <div>
-              <ItemBox>
-                <TitleItem>Description:</TitleItem>
-                <span>{myProjects[projectIndex]?.description}</span>
-              </ItemBox>
-              
-              <ItemBox>
-                <TitleItem>Tools:</TitleItem>
-                
-                <span>
-                  {myProjects[projectIndex]?.tools.map((item, index) => {
-                    return (
-                      <ToolBox key={item.id}>
-                        <Tool>{item?.title}</Tool>
-                        <Tool>{index < myProjects[projectIndex]?.tools.length - 1 && '-'}</Tool>
-                      </ToolBox>
-                    )
-                  })
-                  }
-                </span>
-              </ItemBox>
-              
-              <ItemBox>
-                <LinksBox>
-                  <TitleItem>Links:</TitleItem>
-                  
-                  <LinksBoxItems>
-                    <LinkGitHub
-                      href={myProjects[projectIndex]?.urlGiHub}
-                      target={'_blank'}>
-                      Github
-                    </LinkGitHub>
-                    
-                    <LinkGitHub
-                      href={myProjects[projectIndex]?.urlGiHub}
-                      target={'_blank'}>
-                      Website
-                    </LinkGitHub>
-                  </LinksBoxItems>
-                
-                </LinksBox>
-              </ItemBox>
-            </div>
-          
-          </ModalContent>
-        }
+        projects={myProjects}
+        projectIndex={projectIndex}
       />
     </PortfolioContainer>
   )

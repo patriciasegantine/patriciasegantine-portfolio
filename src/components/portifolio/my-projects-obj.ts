@@ -11,19 +11,7 @@ import styledComponent from "../../assets/tools/styled-component.svg";
 import typescript from "../../assets/tools/typescript.svg";
 import projectFour from "../../assets/img/projects/project-four.jpg";
 import sass from "../../assets/tools/sass.svg";
-
-interface myProjectsInterface {
-  name: string
-  img: string
-  description: string
-  tools: {
-    id: string
-    title: string
-    src: string
-  }[]
-  urlGiHub: string
-  urlWebsite: string
-}
+import { myProjectsInterface } from "../../type/projects.ts";
 
 export const myProjects: myProjectsInterface[] = [
   {
