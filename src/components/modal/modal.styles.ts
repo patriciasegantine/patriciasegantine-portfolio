@@ -44,7 +44,9 @@ export const Tool = styled.span`
   margin-right: .5rem;
 `
 
-export const ModalContent = styled.div<{ isflex: boolean }>`
+export const ModalContent = styled.div<{
+  horizontal: boolean
+}>`
   display: flex;
   flex-direction: column;
   row-gap: ${theme["spacing-regular"]};
@@ -55,7 +57,7 @@ export const ModalContent = styled.div<{ isflex: boolean }>`
     border-radius: ${theme["border-radius-primary"]};
   }
 
-  ${props => props.isflex && css`
+  ${props => props.horizontal && css`
     flex-direction: row;
     column-gap: ${theme["spacing-regular"]};
 

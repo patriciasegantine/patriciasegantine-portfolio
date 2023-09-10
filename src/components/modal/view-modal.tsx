@@ -25,10 +25,10 @@ interface ViewModal {
   title: string
   projects: any
   projectIndex: number
-  isflex: boolean
+  horizontal: boolean
 }
 
-export const ViewModal: React.FC<ViewModal> = ({open, setOpen, title, projects, projectIndex, isflex = true}) => {
+export const ViewModal: React.FC<ViewModal> = ({open, setOpen, title, projects, projectIndex, horizontal}) => {
   
   const handleClose = () => setOpen(false);
   
@@ -49,7 +49,7 @@ export const ViewModal: React.FC<ViewModal> = ({open, setOpen, title, projects, 
           </ModalHeader>
           
           <ModalBody>
-            <ModalContent isFlex={isflex}>
+            <ModalContent horizontal={horizontal}>
               <div>
                 <img src={projects[projectIndex]?.img} alt=""/>
               </div>
