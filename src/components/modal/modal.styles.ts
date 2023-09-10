@@ -44,25 +44,6 @@ export const Tool = styled.span`
   margin-right: .5rem;
 `
 
-export const ModalCloseButton = styled.span`
-  font-size: ${theme["font-size-s"]};
-  font-weight: 600;
-
-  background: ${theme["color-neutral-light"]};
-  color: ${theme["color-gray-dark"]};
-  padding: .4rem 4rem;
-  text-align: center;
-
-  border-radius: ${theme["border-radius-primary"]};
-  cursor: pointer;
-
-  &:hover {
-    opacity: .6;
-    scale: 1.1;
-    transition: .2s;
-  }
-`
-
 export const ModalContent = styled.div<{ isflex: boolean }>`
   display: flex;
   flex-direction: column;
@@ -74,7 +55,7 @@ export const ModalContent = styled.div<{ isflex: boolean }>`
     border-radius: ${theme["border-radius-primary"]};
   }
 
-  ${props => props.isFlex && css`
+  ${props => props.isflex && css`
     flex-direction: row;
     column-gap: ${theme["spacing-regular"]};
 

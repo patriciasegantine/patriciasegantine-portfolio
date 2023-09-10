@@ -4,6 +4,7 @@ import { useState } from "react";
 import { nlwProjects } from "./nlwProjects.ts";
 import { ViewModal } from "../modal/view-modal.tsx";
 import { CarrosselCards } from "../carrossel/carrossel.tsx";
+import { myProjectsInterface } from "../../type/projects.ts";
 
 export const Nlw = () => {
   
@@ -11,7 +12,7 @@ export const Nlw = () => {
   const [projectIndex, setProjectIndex] = useState<number>(0);
   
   const projects = nlwProjects?.map(
-    (el) => {
+    (el: myProjectsInterface) => {
       return (
         <CardCarrossel>
           <h3>{el.name}</h3>
