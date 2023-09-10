@@ -53,7 +53,7 @@ export const theme = {
   'mobile': '480px',
   'tablet': '768px',
   'laptop': '1024px',
-  'desktop': '1200px',
+  'desktop': '1400px',
   
-  'container': '1100px'
+  'container': '1200px'
 }
