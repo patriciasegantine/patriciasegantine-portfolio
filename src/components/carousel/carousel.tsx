@@ -14,9 +14,10 @@ interface Interface {
   setOpen: React.Dispatch<boolean>
   projects: myProjectsInterface[]
   setProjectIndex: React.Dispatch<number>
+  slideQuantity: number
 }
 
-export const CarrosselCards: React.FC<Interface> = ({setOpen, projects, setProjectIndex}) => {
+export const CarouselCards: React.FC<Interface> = ({setOpen, projects, setProjectIndex, slideQuantity}) => {
   
   const handleOpen = (index: number) => {
     setOpen(true)
@@ -37,7 +38,7 @@ export const CarrosselCards: React.FC<Interface> = ({setOpen, projects, setProje
       navigation={true}
       modules={[Navigation, Pagination, Autoplay]}
       className="mySwiper"
-      slidesPerView={2}
+      slidesPerView={slideQuantity}
       autoplay={{
         delay: 3000,
         disableOnInteraction: true,

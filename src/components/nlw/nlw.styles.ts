@@ -12,7 +12,7 @@ export const Carrossel = styled(Swiper)`
 export const NLWContainer = styled(SectionContainer)`
 
 `
-export const CardCarrossel = styled.div`
+export const CardCarousel = styled.div`
     //border: 1px solid ${theme["color-social-media"]};
 
   h3 {
