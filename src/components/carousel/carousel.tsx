@@ -1,6 +1,6 @@
 import React from 'react';
 import { SwiperSlide } from 'swiper/react';
-import { Carrossel } from "../nlw/nlw.styles.ts";
+import { Carrossel } from "../../view/nlw/nlw.styles.ts";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { theme } from "../../theme.ts";
 import { myProjectsInterface } from "../../type/projects.ts";

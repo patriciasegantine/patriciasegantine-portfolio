@@ -2,9 +2,9 @@ import { CardCarousel, NLWContainer } from "./nlw.styles.ts";
 import { SectionTitle, Subtitle } from "../../global.styles.ts";
 import { useEffect, useState } from "react";
 import { nlwProjects } from "./nlwProjects.ts";
-import { ViewModal } from "../modal/view-modal.tsx";
+import { ViewModal } from "../../components/modal/view-modal.tsx";
 import { myProjectsInterface } from "../../type/projects.ts";
-import { CarouselCards } from "../carousel/carousel.tsx";
+import { CarouselCards } from "../../components/carousel/carousel.tsx";
 
 export const Nlw = () => {
   
@@ -46,7 +46,7 @@ export const Nlw = () => {
   );
   
   return (
-    <NLWContainer>
+    <NLWContainer id="nextLevelWeek">
       <SectionTitle>Next Level Week</SectionTitle>
       <Subtitle>
         This is a week of programming
