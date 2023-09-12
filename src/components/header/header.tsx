@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { HeaderContainer, HeaderContent, Logo, MenuMobileContainer } from "./header.styles.ts";
-import { MenuMobile } from "../../assets/icon/menu-mobile.tsx";
-import { Nav } from "../nav/nav.tsx";
 import logo from '../../assets/img/logo.png'
+import { MenuMobileDrawer } from "../drawer/drawer.tsx";
+import { NavMenu } from "../navMenu/navMenu.tsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = () => {
   
@@ -50,17 +52,25 @@ export const Header = () => {
   }, [windowWidth]);
   
   return (
-    <HeaderContainer fixed={isMenuFixed}>
+    <HeaderContainer fixed={isMenuFixed ? 'fixed' : 'noFixed'}>
       <HeaderContent>
         <Logo src={logo} alt="logo" style={{width: '40px'}}/>
         {
           showMobileMenu
             ? <MenuMobileContainer onClick={toggleMobileMenu}>
-              <MenuMobile/>
+              <FontAwesomeIcon
+                icon={faBars}
+                size={'2x'}
+              />
             </MenuMobileContainer>
-            : <Nav mobile={isMobileOpen}/>
+            : <NavMenu type={'desktop'}/>
         }
       </HeaderContent>
+      
+      <MenuMobileDrawer
+        setIsMobileOpen={setIsMobileOpen}
+        isMobileOpen={isMobileOpen}
+      />
     
     </HeaderContainer>
   );

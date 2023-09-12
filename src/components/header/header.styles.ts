@@ -1,8 +1,7 @@
 import styled, { css } from "styled-components";
 import { theme } from "../../theme.ts";
 
-export const HeaderContainer = styled.header<{ fixed: boolean }>`
-
+export const HeaderContainer = styled.header<{ fixed: 'fixed' | 'noFixed' }>`
   width: 100%;
   padding: ${theme["spacing-regular"]};
   font-family: ${theme["font-secondary"]};
@@ -13,7 +12,7 @@ export const HeaderContainer = styled.header<{ fixed: boolean }>`
   border-bottom: 1px solid ${theme["color-line"]};
 
   ${(props) =>
-          props.fixed && css`
+          props.fixed === 'fixed' && css`
             position: fixed;
             backdrop-filter: blur(20px);
             box-shadow: ${theme["shadow-primary"]};
@@ -33,26 +32,12 @@ export const Logo = styled.img`
   height: 40px;
 `
 
-export const NavContainer = styled.nav<{ mobile: boolean }>`
-  display: flex;
-  column-gap: 8px;
-  justify-content: flex-end;
-
-
-  ${(props) =>
-          props.mobile && css`
-            flex-direction: column;
-          `}
-`
-
 export const MenuMobileContainer = styled.div`
-`
-
-export const Link = styled.a<{ active: boolean }>`
-  display: inline-block;
-  font-size: ${theme["font-size-xs"]};
-  text-transform: uppercase;
-  padding: 5px 10px;
+  color: ${theme["color-highlight"]};
   cursor: pointer;
-  color: ${((props) => props.active ? theme["color-white"] : theme["color-neutral-light"])};
+
+  &:hover {
+    opacity: .6;
+    scale: 1.1;
+  }
 `

@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { theme } from './theme.ts'
+import { createTheme } from "@mui/material";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -33,19 +34,16 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const SectionContainer = styled.section`
-
+  scroll-margin-top: 250px;
   max-width: ${theme['container']};
   margin: ${theme["spacing-big"]} auto;
   position: relative;
-  border-bottom: 1px solid #3c3e41;
+  border-bottom: 1px solid ${theme["color-line"]};
   padding-bottom: 64px;
   padding-left: ${theme["spacing-small"]};
   padding-right: ${theme["spacing-small"]};
-
-  @media (max-width: ${theme.tablet}) {
-  }
-
 `
+
 export const Title = styled.h1`
   font-family: ${theme["font-secondary"]};
   font-size: ${theme["font-size-xxl"]};
@@ -61,14 +59,12 @@ export const Subtitle = styled.h3`
   font-weight: 500;
   margin-bottom: ${theme["spacing-small"]};
   color: ${theme["color-highlight"]};
-  //text-align: center;
 `
 
 export const SectionTitle = styled.h2`
   font-family: ${theme["font-secondary"]};
   font-size: ${theme["font-size-xxl"]};
   color: ${theme["color-white"]};
-  //text-align: center;
   font-weight: 700;
   margin-top: ${theme["spacing-regular"]};
 `
@@ -81,3 +77,35 @@ export const Destaque = styled.h4`
   font-weight: 500;
   margin-bottom: ${theme["spacing-small"]};
 `
+
+export const muiTheme = createTheme({
+  palette: {
+    primary: {
+      main: theme["color-neutral-light"],
+    },
+    secondary: {
+      main: theme["color-gray-dark"],
+    },
+    text: {
+      primary: theme["color-white"],
+      secondary: theme["color-social-media"],
+    },
+    action: {
+      disabledBackground: theme["color-gray-dark"],
+    },
+  },
+});
+
+export const inputBorderStyles = {
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: theme["color-neutral-light"],
+    },
+    '&:hover fieldset': {
+      borderColor: 'white',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: theme["color-white"],
+    },
+  },
+};
