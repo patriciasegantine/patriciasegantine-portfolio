@@ -4,16 +4,16 @@ import {
   CardContainer,
   DescriptionBox,
   IconContainer,
-  PortfolioContainer,
+  MyProjectsContainer,
   ToolsBox,
-} from './portfolio.styles.ts'
+} from './my-projects.styles.ts'
 import { SectionTitle, Subtitle } from '../../global.styles.ts'
 
 import { useState } from "react";
 import { myProjects } from "./my-projects-obj.ts";
-import { ViewModal } from "../modal/view-modal.tsx";
+import { ViewModal } from "../../components/modal/view-modal.tsx";
 
-export const Portfolio = () => {
+export const MyProjects = () => {
   
   const [open, setOpen] = useState<boolean>(false);
   const [projectIndex, setProjectIndex] = useState<number>(0);
@@ -24,9 +24,9 @@ export const Portfolio = () => {
   };
   
   return (
-    <PortfolioContainer>
-      <SectionTitle id="portfolio">My Projects</SectionTitle>
-      <Subtitle id="portfolio">
+    <MyProjectsContainer id="myProjects">
+      <SectionTitle>My Projects</SectionTitle>
+      <Subtitle>
         Lorem ipsum dolor sit amet, consectetur adipisicing.
       </Subtitle>
       
@@ -67,6 +67,6 @@ export const Portfolio = () => {
         projectIndex={projectIndex}
         horizontal={true}
       />
-    </PortfolioContainer>
+    </MyProjectsContainer>
   )
 }

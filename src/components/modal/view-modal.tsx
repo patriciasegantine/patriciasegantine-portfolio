@@ -3,7 +3,8 @@ import { Box, Fade, Modal } from "@mui/material";
 import { theme } from "../../theme.ts";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { ModalBody, ModalClose, ModalContent, ModalHeader, ModalTitle, Tool, ToolBox } from "./modal.styles.ts";
-import { ItemBox, LinkGitHub, LinksBox, LinksBoxItems, TitleItem } from "../portifolio/portfolio.styles.ts";
+import { ItemBox, LinkGitHub, LinksBox, LinksBoxItems, TitleItem } from "../../view/my-projects/my-projects.styles.ts";
+import { myProjectsInterface } from "../../type/projects.ts";
 
 const style = {
   position: 'absolute' as const,
@@ -23,7 +24,7 @@ interface ViewModal {
   open: boolean
   setOpen: React.Dispatch<boolean>
   title: string
-  projects: any
+  projects: myProjectsInterface
   projectIndex: number
   horizontal: boolean
 }

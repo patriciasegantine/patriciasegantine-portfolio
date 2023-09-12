@@ -9,7 +9,7 @@ import {
   TitlePerfil
 } from "./about.styles.ts";
 import { Destaque, Subtitle, Title } from "../../global.styles.ts";
-import { SocialMedia } from "../social-media/social-media.tsx";
+import { SocialMedia } from "../../components/social-media/social-media.tsx";
 
 export const About = () => {
   
@@ -40,7 +40,7 @@ export const About = () => {
           </p>
           
           <SocialMediaContainer>
-            <Subtitle id="portfolio">
+            <Subtitle>
               My socials media
             </Subtitle>
             <SocialMedia/>

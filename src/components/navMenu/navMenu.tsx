@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { faAddressCard, faEnvelope, faFile, faFileCode, faRocket } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAddressCard,
+  faEnvelope,
+  faFile,
+  faFileCode,
+  faRocket,
+  IconDefinition
+} from "@fortawesome/free-solid-svg-icons";
 import { Link, LinkContainer, linkOptions, NavContainer } from "./navMenu.styles.ts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { optionsEnum, optionsEnumLabel } from "./enumNav.ts";
@@ -11,7 +18,7 @@ interface NavInterface {
 interface MenuOptionsInterface {
   id: string
   name: string
-  icon: any
+  icon: IconDefinition
 }
 
 const menuOptions: MenuOptionsInterface[] = [
@@ -46,7 +53,7 @@ export const NavMenu: React.FC<NavInterface> = ({type}) => {
   
   const [active, setActive] = useState<linkOptions>(optionsEnum.about)
   
-  const handleSelectLink = (id: string | null) => {
+  const handleSelectLink = (id: string) => {
     setActive(id)
     
     const sectionElement = document.getElementById(optionsEnum[id]);
@@ -54,8 +61,6 @@ export const NavMenu: React.FC<NavInterface> = ({type}) => {
     if (sectionElement) {
       sectionElement.scrollIntoView({behavior: 'smooth'});
     }
-    
-    console.log('active', active)
   }
   
   return (

@@ -8,7 +8,7 @@ import { myProjectsInterface } from "../../type/projects.ts";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { CardBoxImg } from "../portifolio/portfolio.styles.ts";
+import { CardBoxImg } from "../../view/my-projects/my-projects.styles.ts";
 
 interface Interface {
   setOpen: React.Dispatch<boolean>

@@ -36,8 +36,8 @@ const works = [
 export const Experience = () => {
   return (
     <ExperienceContainer id="experience">
-      <SectionTitle id="portfolio">Experience</SectionTitle>
-      <Subtitle id="portfolio">
+      <SectionTitle>Experience</SectionTitle>
+      <Subtitle>
         Lorem ipsum dolor sit amet, consectetur adipisicing.
       </Subtitle>
       

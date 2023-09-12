@@ -2,7 +2,7 @@ import { SectionContainer } from '../../global.styles.ts'
 import styled from 'styled-components'
 import { theme } from '../../theme.ts'
 
-export const PortfolioContainer = styled(SectionContainer)``
+export const MyProjectsContainer = styled(SectionContainer)``
 
 export const CardContainer = styled.div`
   display: grid;
