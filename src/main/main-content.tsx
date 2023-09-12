@@ -4,16 +4,17 @@ import { MyProjects } from "../view/my-projects/my-projects.tsx";
 import { RightAside } from "../components/aside/right-aside.tsx";
 import { Experience } from "../components/timeline-work/experience.tsx";
 import { Nlw } from "../components/nlw/nlw.tsx";
+import { Contact } from "../view/contact/contact.tsx";
 
 export const MainContent = () => {
   return (
     <MainContainer>
-      {/*<LeftAside/>*/}
       <RightAside/>
       <About/>
       <MyProjects/>
       <Experience/>
       <Nlw/>
+      <Contact/>
     </MainContainer>
   );
 };
