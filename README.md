@@ -31,4 +31,19 @@ To run this project locally, follow the steps below:
 
 2. This will generate an optimized and minified version of your project in the `dist` directory.
 
-Feel free to explore my portfolio and get in touch if you have any questions or would like to collaborate!
+## Acknowledgment:
+
+### Development Note: Backend Implementation
+
+Please be aware that, as of now, there are no backend implementations in place. However, I have plans to develop backend
+functionalities in the near future.
+
+While my current focus remains on the frontend and core features, I am fully committed to expanding my project to
+include robust backend components. Stay tuned for updates as I work towards a more comprehensive solution.
+
+I greatly appreciate your patience and support.
+
+Feel free to explore my project, which focuses on daily care and well-being. If you have any questions or would like to
+collaborate, please don't hesitate to get in touch!
+
+— Patricia Segantine
