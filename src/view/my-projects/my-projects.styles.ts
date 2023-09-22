@@ -35,7 +35,7 @@ export const CardBoxImg = styled.div`
   img {
     width: 100%;
     border-radius: 10px 100px;
-    padding: 36px;
+    padding: ${theme["spacing-small"]};
 
     &:hover {
       scale: 1.1;
@@ -64,8 +64,8 @@ export const IconContainer = styled.div`
   opacity: .8;
 
   img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 `
 

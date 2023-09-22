@@ -52,8 +52,7 @@ export const ModalContent = styled.div<{
   row-gap: ${theme["spacing-regular"]};
 
   img {
-    width: 100%;
-    height: 350px;
+    height: 300px;
     border-radius: ${theme["border-radius-primary"]};
   }
 
@@ -68,4 +67,9 @@ export const ModalContent = styled.div<{
       height: 350px;
     }
   `}
+`
+
+export const BoxImgModal = styled.div`
+  display: flex;
+  justify-content: center;
 `

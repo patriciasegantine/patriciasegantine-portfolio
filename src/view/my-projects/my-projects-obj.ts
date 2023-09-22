@@ -1,65 +1,67 @@
-import projectOne from "../../assets/img/projects/project-one.jpg";
-import reactIcon from "../../assets/tools/react.svg";
-import tailwindCSS from "../../assets/tools/tailwind-css.svg";
-import nodeJS from "../../assets/tools/node-js.svg";
-import projectTwo from "../../assets/img/projects/project-two.jpg";
-import git from "../../assets/tools/git.svg";
-import javaScript from "../../assets/tools/javascript-js.svg";
-import angular from "../../assets/tools/angular.svg";
-import projectThree from "../../assets/img/projects/project-three.jpg";
-import styledComponent from "../../assets/tools/styled-component.svg";
-import typescript from "../../assets/tools/typescript.svg";
-import projectFour from "../../assets/img/projects/project-four.jpg";
-import sass from "../../assets/tools/sass.svg";
 import { myProjectsInterface } from "../../type/projects.ts";
+import reactIcon from "../../assets/tools/react.svg";
+import typescript from "../../assets/tools/typescript.svg";
+import styledComponent from "../../assets/tools/styled-component.svg";
+import materialUI from "../../assets/tools/material-ui.svg";
+import redux from "../../assets/tools/redux.svg";
+import angular from "../../assets/tools/angular.svg";
+import vite from "../../assets/tools/vite.svg"
+import next from "../../assets/tools/next-js.svg"
+
+import harmony from "../../assets/projects/harmony.png"
+import comingSoon from "../../assets/projects/coming-soon.png"
 
 export const myProjects: myProjectsInterface[] = [
   {
-    name: 'Dynamic Form',
-    img: projectOne,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur corporis delectus dolor dolore dolorem dolorum explicabo perspiciatis possimus voluptates.',
+    id: 1,
+    name: 'Harmony',
+    img: harmony,
+    description: 'Explore the Daily Care Web Page, a digital sanctuary dedicated to your daily well-being. This project reflects my passion for frontend development, offering a visually captivating and user-friendly platform to enhance your daily self-care rituals..',
     tools: [
       {id: '01', title: 'React', src: reactIcon},
-      {id: '02', title: 'Typescript', src: tailwindCSS},
-      {id: '03', title: 'Antd', src: nodeJS},
+      {id: '02', title: 'Typescript', src: typescript},
+      {id: '03', title: 'Redux', src: redux},
+      {id: '04', title: 'Styled Component', src: styledComponent},
+      {id: '05', title: 'Material UI', src: materialUI},
+      {id: '06', title: 'Vite', src: vite},
     ],
-    urlGiHub: "https://github.com/patriciasegantine/dynamic-form-react-ts/blob/main/README.md",
-    urlWebsite: "https://github.com/patriciasegantine/dynamic-form-react-ts/blob/main/README.md"
+    urlGiHub: "https://github.com/patriciasegantine/harmony-shop",
+    urlWebsite: "https://harmony-shop.vercel.app/"
   },
   {
-    name: 'Project Two',
-    img: projectTwo,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur corporis delectus dolor dolore dolorem dolorum explicabo perspiciatis possimus voluptates.',
+    id: 2,
+    name: 'Coming Soon',
+    img: comingSoon,
+    description: 'I\'m excited to share that there are more projects in the pipeline. Stay tuned for updates as I continue to build and expand my portfolio',
     tools: [
-      {id: '01', title: 'css', src: git},
-      {id: '02', title: 'css', src: javaScript},
-      {id: '03', title: 'css', src: angular},
+      {id: '01', title: 'Next', src: next},
+      {id: '02', title: 'Typescript', src: typescript},
     ],
-    urlGiHub: "https://github.com/patriciasegantine/dynamic-form-react-ts/blob/main/README.md",
-    urlWebsite: "https://github.com/patriciasegantine/dynamic-form-react-ts/blob/main/README.md"
+    urlGiHub: "https://github.com/patriciasegantine/my-portfolio",
+    urlWebsite: "https://github.com/patriciasegantine/my-portfolio"
   },
   {
-    name: 'Project Three',
-    img: projectThree,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur corporis delectus dolor dolore dolorem dolorum explicabo perspiciatis possimus voluptates.',
+    id: 3,
+    name: 'Coming Soon',
+    img: comingSoon,
+    description: 'I\'m excited to share that there are more projects in the pipeline. Stay tuned for updates as I continue to build and expand my portfolio',
     tools: [
-      {id: '01', title: 'CSS', src: reactIcon},
-      {id: '02', title: 'CSS', src: styledComponent},
-      {id: '03', title: 'CSS', src: typescript},
+      {id: '01', title: 'React', src: reactIcon},
+      {id: '02', title: 'Styled Componen', src: styledComponent},
     ],
-    urlGiHub: "https://github.com/patriciasegantine/dynamic-form-react-ts/blob/main/README.md",
-    urlWebsite: "https://github.com/patriciasegantine/dynamic-form-react-ts/blob/main/README.md"
+    urlGiHub: "https://github.com/patriciasegantine/my-portfolio",
+    urlWebsite: "https://github.com/patriciasegantine/my-portfolio"
   },
   {
-    name: 'Project Four',
-    img: projectFour,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur corporis delectus dolor dolore dolorem dolorum explicabo perspiciatis possimus voluptates.',
+    id: 4,
+    name: 'Coming Soon',
+    img: comingSoon,
+    description: 'I\'m excited to share that there are more projects in the pipeline. Stay tuned for updates as I continue to build and expand my portfolio',
     tools: [
-      {id: '01', title: 'CSS', src: sass},
-      {id: '02', title: 'CSS', src: reactIcon},
-      {id: '03', title: 'css', src: reactIcon},
+      {id: '01', title: 'CSS', src: typescript},
+      {id: '02', title: 'Angular', src: angular},
     ],
-    urlGiHub: "https://github.com/patriciasegantine/dynamic-form-react-ts/blob/main/README.md",
-    urlWebsite: "https://github.com/patriciasegantine/dynamic-form-react-ts/blob/main/README.md"
+    urlGiHub: "https://github.com/patriciasegantine/my-portfolio",
+    urlWebsite: "https://github.com/patriciasegantine/my-portfolio"
   },
 ]

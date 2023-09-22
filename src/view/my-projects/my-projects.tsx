@@ -33,7 +33,7 @@ export const MyProjects = () => {
       <CardContainer>
         {myProjects?.map((project, index) => {
           return (
-            <Card key={project.name}>
+            <Card key={project.id}>
               <DescriptionBox>
                 <h2>{project.name}</h2>
               </DescriptionBox>
@@ -65,7 +65,7 @@ export const MyProjects = () => {
         title={myProjects[projectIndex]?.name}
         projects={myProjects}
         projectIndex={projectIndex}
-        horizontal={true}
+        horizontal={false}
       />
     </MyProjectsContainer>
   )

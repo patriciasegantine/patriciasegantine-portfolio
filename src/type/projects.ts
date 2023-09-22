@@ -5,6 +5,7 @@ type Tools = {
 }
 
 export interface myProjectsInterface {
+  id: number
   name: string
   img: string
   description: string

@@ -2,7 +2,16 @@ import React from 'react';
 import { Box, Fade, Modal } from "@mui/material";
 import { theme } from "../../theme.ts";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
-import { ModalBody, ModalClose, ModalContent, ModalHeader, ModalTitle, Tool, ToolBox } from "./modal.styles.ts";
+import {
+  BoxImgModal,
+  ModalBody,
+  ModalClose,
+  ModalContent,
+  ModalHeader,
+  ModalTitle,
+  Tool,
+  ToolBox
+} from "./modal.styles.ts";
 import { ItemBox, LinkGitHub, LinksBox, LinksBoxItems, TitleItem } from "../../view/my-projects/my-projects.styles.ts";
 import { myProjectsInterface } from "../../type/projects.ts";
 
@@ -11,7 +20,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 800,
+  // width: 700,
   bgcolor: `${theme["background-color-1"]}`,
   border: '2px solid transparent',
   borderRadius: `${theme["border-radius-primary"]}`,
@@ -24,7 +33,7 @@ interface ViewModal {
   open: boolean
   setOpen: React.Dispatch<boolean>
   title: string
-  projects: myProjectsInterface
+  projects: myProjectsInterface[]
   projectIndex: number
   horizontal: boolean
 }
@@ -51,9 +60,9 @@ export const ViewModal: React.FC<ViewModal> = ({open, setOpen, title, projects, 
           
           <ModalBody>
             <ModalContent horizontal={horizontal}>
-              <div>
+              <BoxImgModal>
                 <img src={projects[projectIndex]?.img} alt=""/>
-              </div>
+              </BoxImgModal>
               
               <div>
                 <ItemBox>
@@ -88,7 +97,7 @@ export const ViewModal: React.FC<ViewModal> = ({open, setOpen, title, projects, 
                       </LinkGitHub>
                       
                       <LinkGitHub
-                        href={projects[projectIndex]?.urlGiHub}
+                        href={projects[projectIndex]?.urlWebsite}
                         target={'_blank'}>
                         Website
                       </LinkGitHub>
@@ -100,12 +109,6 @@ export const ViewModal: React.FC<ViewModal> = ({open, setOpen, title, projects, 
             
             </ModalContent>
           </ModalBody>
-          
-          {/*<ModalFooter>*/}
-          {/*  <ModalCloseButton*/}
-          {/*    onClick={handleClose}>Fechar*/}
-          {/*  </ModalCloseButton>*/}
-          {/*</ModalFooter>*/}
         </Box>
       </Fade>
     
