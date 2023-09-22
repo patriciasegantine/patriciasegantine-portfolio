@@ -25,18 +25,18 @@ export const About = () => {
           </TitlePerfil>
           
           <p>
-            Professional and dedicated web developer who is passionate about technologies and innovation. I’m a focused
-            on
-            developing web solutions trying making a difference in people's lives through technology, with more than 4
-            years
-            of experience in B2B and B2C project development.
+            I'm a dedicated web developer passionate about technology and innovation, with over 4 years of experience in
+            both B2B and B2C project development. I focus on creating web solutions that make a difference in people's
+            lives through technology.
           </p>
           
-          <p>For the last year I have been working mainly with React, Redux, Typescript, Styled Components, Ant Design,
-            Single SPA micro-front-end and RESTful API integration.
+          <p>
+            Over the past year, my main areas of expertise have included React, Redux, TypeScript, Styled Components,
+            Ant Design, Single SPA micro-front-end, and RESTful API integration.
           </p>
           
-          <p>This year my main goal is to deepen in the study of Angular and Node.js. ❤️
+          <p>
+            My primary goal for this year is to further deepen my knowledge of Angular. ❤️
           </p>
           
           <SocialMediaContainer>
