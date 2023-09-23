@@ -9,7 +9,7 @@ export enum optionsEnum {
 export enum optionsEnumLabel {
   about = 'About',
   myProjects = 'My Projects',
-  nextLevelWeek = 'Next LevelWeek',
-  experience = 'Experience',
-  contact = 'Contact'
+  nextLevelWeek = 'Next Level Week',
+  experience = 'Experiences',
+  contact = 'Get in Touch'
 }

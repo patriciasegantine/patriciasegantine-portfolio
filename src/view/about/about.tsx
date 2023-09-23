@@ -2,10 +2,10 @@ import img from '../../assets/img/perfil-img.png'
 import { AboutContainer, ImgContent, ImgPerfil, TitlePerfil } from "./about.styles.ts";
 import { Grid } from "@mui/material";
 import { InfoPerfil } from "../../components/infoPerfil/infoPerfil.tsx";
-import { theme } from "../../theme.ts";
 import { Destaque, Title } from "../../global.styles.ts";
 
 export const About = () => {
+  const reverse = {flexDirection: {xs: 'column-reverse', md: 'row'}}
   
   return (
     <AboutContainer id="about">
@@ -16,8 +16,8 @@ export const About = () => {
         <Destaque>a Frontend Developer</Destaque>
       </TitlePerfil>
       
-      <Grid container sx={{flexDirection: {xs: 'column-reverse', md: 'row'}}}>
-        <Grid item xs={12} md={7} paddingRight={theme["spacing-regular"]}>
+      <Grid container columnSpacing={3} sx={{...reverse}}>
+        <Grid item xs={12} md={7}>
           <InfoPerfil/>
         </Grid>
         

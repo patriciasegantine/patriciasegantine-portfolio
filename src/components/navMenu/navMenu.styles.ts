@@ -20,12 +20,9 @@ export const NavContainer = styled.nav<{ type: 'mobile' | 'desktop' | null }>`
 
 export const LinkContainer = styled.div<{ active: 'active' | 'inactive' }>`
   display: inline-block;
-  font-size: ${theme["font-size-xs"]};
   text-transform: uppercase;
   padding: 5px 10px;
   cursor: pointer;
-
-    //color: ${((props) => props.active ? theme["color-white"] : theme["color-neutral-light"])};
 
   &:hover {
     opacity: .6;
@@ -44,7 +41,7 @@ export const LinkContainer = styled.div<{ active: 'active' | 'inactive' }>`
 
 export const Link = styled.a`
   display: inline-block;
-  font-size: ${theme["font-size-xs"]};
+  font-size: ${theme["font-size-s"]};
   text-transform: uppercase;
   padding: 5px 10px;
   cursor: pointer;
