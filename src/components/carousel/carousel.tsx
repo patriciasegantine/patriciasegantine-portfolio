@@ -1,23 +1,34 @@
 import React from 'react';
 import { SwiperSlide } from 'swiper/react';
-import { Carrossel } from "../../view/nlw/nlw.styles.ts";
+import { CardCarousel, Carrossel } from "../../view/nlw/nlw.styles.ts";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { theme } from "../../theme.ts";
-import { myProjectsInterface } from "../../type/projects.ts";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { CardBoxImg } from "../../view/my-projects/my-projects.styles.ts";
+import { nlwProjects } from "../../view/nlw/nlwProjects.ts";
+import { myProjectsInterface } from "../../type/projects.ts";
 
 interface Interface {
   setOpen: React.Dispatch<boolean>
-  projects: myProjectsInterface[]
+  // projects: myProjectsInterface
   setProjectIndex: React.Dispatch<number>
   slideQuantity: number
 }
 
-export const CarouselCards: React.FC<Interface> = ({setOpen, projects, setProjectIndex, slideQuantity}) => {
+export const CarouselCards: React.FC<Interface> = ({setOpen, setProjectIndex, slideQuantity}) => {
+  
+  const projects = nlwProjects?.map(
+    (el: myProjectsInterface) => {
+      return (
+        <CardCarousel>
+          <h3>{el.name}</h3>
+          <img src={el.img} alt=""/>
+        </CardCarousel>)
+    }
+  );
   
   const handleOpen = (index: number) => {
     setOpen(true)

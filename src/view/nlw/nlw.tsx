@@ -1,18 +1,15 @@
-import { CardCarousel, NLWContainer } from "./nlw.styles.ts";
+import { NLWContainer } from "./nlw.styles.ts";
 import { SectionTitle, Subtitle } from "../../global.styles.ts";
 import { useEffect, useState } from "react";
 import { nlwProjects } from "./nlwProjects.ts";
-import { ViewModal } from "../../components/modal/view-modal.tsx";
-import { myProjectsInterface } from "../../type/projects.ts";
 import { CarouselCards } from "../../components/carousel/carousel.tsx";
+import { ProjectsModal } from "../../components/projects-modal/projects-modal.tsx";
 
 export const Nlw = () => {
   
   const [open, setOpen] = useState<boolean>(false);
   const [projectIndex, setProjectIndex] = useState<number>(0);
-  
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-  
   const [slideQuantity, setSlideQuantity] = useState<number>(2)
   
   useEffect(() => {
@@ -35,31 +32,21 @@ export const Nlw = () => {
     }
   }, [windowWidth]);
   
-  const projects = nlwProjects?.map(
-    (el: myProjectsInterface) => {
-      return (
-        <CardCarousel>
-          <h3>{el.name}</h3>
-          <img src={el.img} alt=""/>
-        </CardCarousel>)
-    }
-  );
-  
   return (
     <NLWContainer id="nextLevelWeek">
       <SectionTitle>Next Level Week</SectionTitle>
       <Subtitle>
-        This is a week of programming
+        Next Level Week is an immersion experience that challenged me to go above and beyond in web development. I
+        developed exciting projects, expanding my skills and collaborating with talented developers
       </Subtitle>
       
       <CarouselCards
-        projects={projects}
         setOpen={setOpen}
         setProjectIndex={setProjectIndex}
         slideQuantity={slideQuantity}
       />
       
-      <ViewModal
+      <ProjectsModal
         open={open}
         setOpen={setOpen}
         title={nlwProjects[projectIndex]?.name}

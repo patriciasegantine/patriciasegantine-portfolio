@@ -5,7 +5,7 @@ import { myProjectsInterface } from "../../type/projects.ts";
 export const nlwProjects: myProjectsInterface[] = [
   {
     id: 1,
-    name: 'NLW 01',
+    name: 'Coming Soon',
     img: comingSoon,
     description: 'I\'m excited to share that there are more projects in the pipeline. Stay tuned for updates as I continue to build and expand my portfolio',
     tools: [
@@ -16,7 +16,7 @@ export const nlwProjects: myProjectsInterface[] = [
   },
   {
     id: 2,
-    name: 'NLW 02',
+    name: 'Coming Soon',
     img: comingSoon,
     description: 'I\'m excited to share that there are more projects in the pipeline. Stay tuned for updates as I continue to build and expand my portfolio',
     tools: [
@@ -27,7 +27,7 @@ export const nlwProjects: myProjectsInterface[] = [
   },
   {
     id: 3,
-    name: 'NLW 03',
+    name: 'Coming Soon',
     img: comingSoon,
     description: 'I\'m excited to share that there are more projects in the pipeline. Stay tuned for updates as I continue to build and expand my portfolio',
     tools: [
@@ -38,7 +38,7 @@ export const nlwProjects: myProjectsInterface[] = [
   },
   {
     id: 4,
-    name: 'NLW 04',
+    name: 'Coming Soon',
     img: comingSoon,
     description: 'I\'m excited to share that there are more projects in the pipeline. Stay tuned for updates as I continue to build and expand my portfolio',
     tools: [

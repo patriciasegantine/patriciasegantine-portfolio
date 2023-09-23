@@ -11,7 +11,7 @@ import {
   ModalTitle,
   Tool,
   ToolBox
-} from "./modal.styles.ts";
+} from "./projects-modal.styles.ts";
 import { ItemBox, LinkGitHub, LinksBox, LinksBoxItems, TitleItem } from "../../view/my-projects/my-projects.styles.ts";
 import { myProjectsInterface } from "../../type/projects.ts";
 
@@ -29,7 +29,7 @@ const style = {
   outline: "transparent",
 };
 
-interface ViewModal {
+interface ProjectsModal {
   open: boolean
   setOpen: React.Dispatch<boolean>
   title: string
@@ -38,7 +38,7 @@ interface ViewModal {
   horizontal: boolean
 }
 
-export const ViewModal: React.FC<ViewModal> = ({open, setOpen, title, projects, projectIndex, horizontal}) => {
+export const ProjectsModal: React.FC<ProjectsModal> = ({open, setOpen, title, projects, projectIndex, horizontal}) => {
   
   const handleClose = () => setOpen(false);
   
