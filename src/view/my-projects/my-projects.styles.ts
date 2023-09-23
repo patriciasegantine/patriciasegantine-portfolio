@@ -4,18 +4,6 @@ import { theme } from '../../theme.ts'
 
 export const MyProjectsContainer = styled(SectionContainer)``
 
-export const CardContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: ${theme['spacing-big']};
-  padding-top: ${theme['spacing-regular']};
-
-  @media (max-width: ${theme.tablet}) {
-    grid-template-columns: 1fr;
-  }
-
-`
-
 export const Card = styled.div`
   width: 100%;
   padding: ${theme['spacing-regular']};
@@ -78,7 +66,6 @@ export const TitleItem = styled.span`
   font-weight: 700;
   padding-right: 1rem;
   color: ${theme["color-white"]};
-
 `
 
 export const LinkGitHub = styled.a`
@@ -92,7 +79,6 @@ export const LinkGitHub = styled.a`
     width: 100%;
     height: 1px;
     background: ${theme['color-highlight']};
-
   }
 
   &:hover {

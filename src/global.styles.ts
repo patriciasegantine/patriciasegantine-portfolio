@@ -52,20 +52,19 @@ export const Title = styled.h1`
 `
 
 export const Subtitle = styled.h3`
-  font-family: ${theme["font-secondary"]};
-  font-size: ${theme["font-size-s"]};
+  font-family: ${theme["font-primary"]};
+  font-size: ${theme["font-size-m"]};
   letter-spacing: 3px;
-  text-transform: uppercase;
   font-weight: 500;
   margin-bottom: ${theme["spacing-small"]};
-  color: ${theme["color-highlight"]};
+  color: ${theme["color-neutral-light"]};
 `
 
-export const SectionTitle = styled.h2`
+export const SectionTitle = styled.h3`
   font-family: ${theme["font-secondary"]};
   font-size: ${theme["font-size-xxl"]};
-  color: ${theme["color-white"]};
-  font-weight: 700;
+  color: ${theme["color-highlight"]};
+  font-weight: 500;
   margin-top: ${theme["spacing-regular"]};
 `
 

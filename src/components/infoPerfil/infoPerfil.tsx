@@ -1,4 +1,3 @@
-import React from 'react';
 import { SocialMediaContainer } from "../../view/about/about.styles.ts";
 import { Subtitle } from "../../global.styles.ts";
 import { SocialMedia } from "../social-media/social-media.tsx";
