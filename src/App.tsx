@@ -1,8 +1,9 @@
-import { GlobalStyle } from "./global.styles.ts";
+import { GlobalStyle, muiTheme } from "./global.styles.ts";
 import { MainContent } from "./main/main-content.tsx";
 import styled from "styled-components";
 import { Header } from "./components/header/header.tsx";
 import { Footer } from "./components/footer/footer.tsx";
+import { ThemeProvider } from "@mui/material";
 
 function App() {
   
@@ -11,12 +12,14 @@ function App() {
   `
   
   return (
-    <Container>
-      <GlobalStyle/>
-      <Header/>
-      <MainContent/>
-      <Footer/>
-    </Container>
+    <ThemeProvider theme={muiTheme}>
+      <Container>
+        <GlobalStyle/>
+        <Header/>
+        <MainContent/>
+        <Footer/>
+      </Container>
+    </ThemeProvider>
   )
 }
 

@@ -1,48 +1,28 @@
-import React from 'react';
 import { SectionTitle, Subtitle } from "../../global.styles.ts";
-import { ContactContainer, ContactContent, MyInformation } from "../../components/contact-form/contact-form.styles.ts";
+import { ContactContainer } from "../../components/contact-form/contact-form.styles.ts";
 import { ContactForm } from "../../components/contact-form/contact-form.tsx";
-import { SocialMedia } from "../../components/social-media/social-media.tsx";
+import { Grid } from "@mui/material";
+import { MyInfoContact } from "../../components/my-info-contact/my-info-contact.tsx";
 
 export const Contact = () => {
   return (
     <ContactContainer id='contact'>
-      <SectionTitle>Contact</SectionTitle>
+      <SectionTitle>Get in Touch</SectionTitle>
       <Subtitle>
-        Get in Touch
+        Interested in my work or looking to collaborate? Feel free to reach out. I'm always open to new opportunities
+        and eager to hear your ideas. You can find me on the following social media or send me a message:
       </Subtitle>
       
-      <ContactContent>
-        <div>
+      <Grid container columnSpacing={3} rowSpacing={3}>
+        <Grid item xs={12} md={7}>
           <ContactForm/>
-        </div>
+        </Grid>
         
-        <div>
-          <MyInformation>
-            <ul>
-              <li>
-                <span>Patricia Segantine</span>
-              </li>
-              
-              <li>
-                <span>Email:</span>
-                <a href="mailto:pnsegantine@gmail.com">pnsegantine@gmail.com</a>
-              </li>
-              
-              <li>
-                <span> Address:</span> Swindon - England - UK
-              </li>
-              
-              <li>
-                <span>Social media:</span>
-                <SocialMedia/>
-              </li>
-            </ul>
-          </MyInformation>
-        </div>
+        <Grid item xs={12} md={5} display={'flex'} alignItems={'flex-end'}>
+          <MyInfoContact/>
+        </Grid>
       
-      </ContactContent>
-    
+      </Grid>
     </ContactContainer>
   );
 };
