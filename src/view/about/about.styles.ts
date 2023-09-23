@@ -1,29 +1,13 @@
 import styled from "styled-components";
 import { SectionContainer } from "../../global.styles.ts";
 import { theme } from "../../theme.ts";
-import { Grid } from "@mui/material";
 
 export const AboutContainer = styled(SectionContainer)`
   margin-top: ${theme["spacing-extra-big"]};
 `
 
-export const AboutContent = styled(Grid)`
-  display: flex;
-    //gap: ${theme["spacing-small"]};
-
-  @media (max-width: ${theme["tablet"]}) {
-    flex-direction: column-reverse;
-  }
-`
-
-const PerfilBox = styled.span`
-  flex: 1;
-`
-
 export const TitlePerfil = styled.div`
-
   margin-bottom: ${theme["spacing-regular"]};
-
 
   h2 {
     font-family: ${theme["font-secondary"]};
@@ -41,9 +25,8 @@ export const TitlePerfil = styled.div`
   }
 `
 
-export const ImgPerfil = styled(PerfilBox)`
+export const ImgPerfil = styled.div`
   display: flex;
-  flex: 40;
   justify-content: center;
 
   @media (max-width: ${theme["laptop"]}) {

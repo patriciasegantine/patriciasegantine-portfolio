@@ -18,7 +18,7 @@ export const InfoPerfil = () => {
       </p>
       
       <p>
-        My primary goal for this year is to further deepen my knowledge of Angular. ❤️
+        Welcome to my portfolio, where you'll find a glimpse of my work and projects. ❤️
       </p>
       
       <SocialMediaContainer>

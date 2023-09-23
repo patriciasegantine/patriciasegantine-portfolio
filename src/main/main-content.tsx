@@ -12,8 +12,8 @@ export const MainContent = () => {
       <RightAside/>
       <About/>
       <MyProjects/>
-      <Experience/>
       <Nlw/>
+      <Experience/>
       <Contact/>
     </MainContainer>
   );

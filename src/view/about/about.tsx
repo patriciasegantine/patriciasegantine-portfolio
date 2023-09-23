@@ -1,10 +1,9 @@
 import img from '../../assets/img/perfil-img.png'
-import { AboutContainer, AboutContent, ImgContent, ImgPerfil, TitlePerfil } from "./about.styles.ts";
+import { AboutContainer, ImgContent, ImgPerfil, TitlePerfil } from "./about.styles.ts";
 import { Grid } from "@mui/material";
 import { InfoPerfil } from "../../components/infoPerfil/infoPerfil.tsx";
 import { theme } from "../../theme.ts";
 import { Destaque, Title } from "../../global.styles.ts";
-import React from "react";
 
 export const About = () => {
   
@@ -17,7 +16,7 @@ export const About = () => {
         <Destaque>a Frontend Developer</Destaque>
       </TitlePerfil>
       
-      <AboutContent container sx={{flexDirection: {xs: 'column-reverse', md: 'row'}}}>
+      <Grid container sx={{flexDirection: {xs: 'column-reverse', md: 'row'}}}>
         <Grid item xs={12} md={7} paddingRight={theme["spacing-regular"]}>
           <InfoPerfil/>
         </Grid>
@@ -30,7 +29,7 @@ export const About = () => {
           </ImgPerfil>
         
         </Grid>
-      </AboutContent>
+      </Grid>
     
     
     </AboutContainer>

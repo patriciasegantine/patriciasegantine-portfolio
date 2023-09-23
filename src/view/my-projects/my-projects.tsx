@@ -10,8 +10,8 @@ import { SectionTitle, Subtitle } from '../../global.styles.ts'
 
 import { useState } from "react";
 import { myProjects } from "./my-projects-obj.ts";
-import { ViewModal } from "../../components/modal/view-modal.tsx";
 import { Grid } from "@mui/material";
+import { ProjectsModal } from "../../components/projects-modal/projects-modal.tsx";
 
 export const MyProjects = () => {
   
@@ -34,7 +34,7 @@ export const MyProjects = () => {
       <Grid container spacing={4}>
         {myProjects?.map((project, index) => {
           return (
-            <Grid key={project.id} item sx={12} md={6}>
+            <Grid key={project.id} item xs={12} md={6}>
               <Card>
                 <DescriptionBox>
                   <h2>{project.name}</h2>
@@ -62,7 +62,7 @@ export const MyProjects = () => {
       
       </Grid>
       
-      <ViewModal
+      <ProjectsModal
         open={open}
         setOpen={setOpen}
         title={myProjects[projectIndex]?.name}
