@@ -25,3 +25,9 @@ export const MyInformation = styled.div`
     text-decoration: none;
   }
 `
+
+export const FakeSending = styled.div`
+  max-width: 300px;
+
+
+`
