@@ -1,43 +1,23 @@
 import styled from "styled-components";
 import { SectionContainer } from "../../global.styles.ts";
 import { theme } from "../../theme.ts";
+import { Grid } from "@mui/material";
 
 export const AboutContainer = styled(SectionContainer)`
   margin-top: ${theme["spacing-extra-big"]};
 `
 
-export const AboutContent = styled.div`
+export const AboutContent = styled(Grid)`
   display: flex;
-  gap: ${theme["spacing-small"]};
+    //gap: ${theme["spacing-small"]};
 
   @media (max-width: ${theme["tablet"]}) {
     flex-direction: column-reverse;
   }
-
 `
 
 const PerfilBox = styled.span`
   flex: 1;
-`
-
-export const InfoPerfil = styled(PerfilBox)`
-  align-self: center;
-  justify-self: center;
-  flex: 60;
-
-  span {
-    font-family: ${theme["font-secondary"]};
-    padding-left: 10px;
-    color: ${theme["color-highlight"]};
-  }
-
-  p {
-    color: ${theme["color-neutral-light"]};
-    font-size: ${theme["font-size-m"]};
-    line-height: ${theme["line-height-l"]};
-    margin-bottom: ${theme["spacing-small"]};
-  }
-
 `
 
 export const TitlePerfil = styled.div`
@@ -54,6 +34,11 @@ export const TitlePerfil = styled.div`
     margin-bottom: ${theme["spacing-small"]};
   }
 
+  span {
+    font-family: ${theme["font-secondary"]};
+    padding-left: 10px;
+    color: ${theme["color-highlight"]};
+  }
 `
 
 export const ImgPerfil = styled(PerfilBox)`
@@ -91,7 +76,6 @@ export const ImgContent = styled.div`
   @media (max-width: ${theme["laptop"]}) {
     margin-top: ${theme["spacing-extra-big"]};
   }
-
 `
 
 export const SocialMediaContainer = styled.div`
