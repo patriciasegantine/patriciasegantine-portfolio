@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import {
   faAddressCard,
   faEnvelope,
   faFile,
   faFileCode,
   faRocket,
-  IconDefinition
-} from "@fortawesome/free-solid-svg-icons";
-import { Link, LinkContainer, linkOptions, NavContainer } from "./navMenu.styles.ts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { optionsEnum, optionsEnumLabel } from "./enumNav.ts";
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons'
+import { Link, LinkContainer, NavContainer, } from './navMenu.styles.ts'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { optionsEnum, optionsEnumLabel } from './enumNav.ts'
 
 interface NavInterface {
   type: 'mobile' | 'desktop'
+  toggleMobileMenu: () => void
 }
 
 interface MenuOptionsInterface {
@@ -25,62 +26,55 @@ const menuOptions: MenuOptionsInterface[] = [
   {
     id: optionsEnum.about,
     name: optionsEnumLabel.about,
-    icon: faAddressCard
+    icon: faAddressCard,
   },
   {
     id: optionsEnum.myProjects,
     name: optionsEnumLabel.myProjects,
-    icon: faFileCode
+    icon: faFileCode,
   },
   {
     id: optionsEnum.nextLevelWeek,
     name: optionsEnumLabel.nextLevelWeek,
-    icon: faRocket
+    icon: faRocket,
   },
   {
     id: optionsEnum.experience,
     name: optionsEnumLabel.experience,
-    icon: faFile
+    icon: faFile,
   },
   {
     id: optionsEnum.contact,
     name: optionsEnumLabel.contact,
-    icon: faEnvelope
-  }
+    icon: faEnvelope,
+  },
 ]
 
-export const NavMenu: React.FC<NavInterface> = ({type}) => {
-  
-  const [active, setActive] = useState<linkOptions>(optionsEnum.about)
+export const NavMenu: React.FC<NavInterface> = ({type, toggleMobileMenu}) => {
+  const [active, setActive] = useState<string>("about")
   
   const handleSelectLink = (id: string) => {
+    const sectionElement = document.getElementById(id)
     setActive(id)
     
-    const sectionElement = document.getElementById(optionsEnum[id]);
-    
-    if (sectionElement) {
-      sectionElement.scrollIntoView({behavior: 'smooth'});
-    }
+    if (sectionElement) sectionElement.scrollIntoView({behavior: 'smooth'})
+    if (type === 'mobile') toggleMobileMenu()
   }
   
   return (
     <NavContainer type={type}>
-      {
-        menuOptions?.map((option: { id: string, icon: any, name: string }) => (
-            <LinkContainer
-              key={option.name}
-              active={active === option.id ? active : null}
-              onClick={() => handleSelectLink(option.id)}
-            >
-              {type === 'mobile' &&
-                <FontAwesomeIcon icon={option.icon} size={'lg'}/>
-              }
-              <Link>{option.name}</Link>
-            
-            </LinkContainer>
-          )
-        )
-      }
+      {menuOptions?.map(({icon, id, name}: MenuOptionsInterface) => (
+        <LinkContainer
+          key={name}
+          active={active === id ? 'active' : 'inactive'}
+          onClick={() => handleSelectLink(id)}
+        >
+          {type === 'mobile' && (
+            <FontAwesomeIcon icon={icon} size={'lg'}/>
+          )}
+          <Link>{name}</Link>
+        </LinkContainer>
+      ))}
     </NavContainer>
-  );
-};
+  )
+}

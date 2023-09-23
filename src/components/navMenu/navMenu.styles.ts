@@ -1,13 +1,10 @@
 import styled, { css } from "styled-components";
 import { theme } from "../../theme.ts";
 
-export type linkOptions = 'about' | 'myProjects' | 'nextLevelWeek' | 'experience' | 'contact' | null
-
-export const NavContainer = styled.nav<{ type: 'mobile' | 'desktop' }>`
+export const NavContainer = styled.nav<{ type: 'mobile' | 'desktop' | null }>`
   display: flex;
   column-gap: 8px;
   justify-content: flex-end;
-
   color: ${theme["color-social-media"]};
 
   ${(props) =>
@@ -21,20 +18,21 @@ export const NavContainer = styled.nav<{ type: 'mobile' | 'desktop' }>`
           `};
 `
 
-export const LinkContainer = styled.div<{ active: linkOptions }>`
+export const LinkContainer = styled.div<{ active: 'active' | 'inactive' }>`
   display: inline-block;
   font-size: ${theme["font-size-xs"]};
   text-transform: uppercase;
   padding: 5px 10px;
   cursor: pointer;
-  color: ${((props) => props.active ? theme["color-white"] : theme["color-neutral-light"])};
+
+    //color: ${((props) => props.active ? theme["color-white"] : theme["color-neutral-light"])};
 
   &:hover {
     opacity: .6;
   }
 
   ${(props) =>
-          props.active && css`
+          props.active === 'active' && css`
             color: ${theme["color-highlight"]};
             font-weight: 500;
 

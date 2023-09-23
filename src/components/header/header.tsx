@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
-import { HeaderContainer, HeaderContent, Logo, MenuMobileContainer } from "./header.styles.ts";
+import { useEffect, useState } from 'react'
+import { HeaderContainer, HeaderContent, Logo, MenuMobileContainer, } from './header.styles.ts'
+import { MenuMobileDrawer } from '../mobile-drawer/mobile-drawer.tsx'
+import { NavMenu } from '../navMenu/navMenu.tsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../assets/img/logo.png'
-import { MenuMobileDrawer } from "../drawer/drawer.tsx";
-import { NavMenu } from "../navMenu/navMenu.tsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = () => {
-  
   const [isMenuFixed, setIsMenuFixed] = useState<boolean>(false)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   
@@ -15,32 +14,30 @@ export const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false)
   
   const handleScroll = () => {
-    
     if (window.scrollY > 10) {
-      setIsMenuFixed(true);
+      setIsMenuFixed(true)
     } else {
-      setIsMenuFixed(false);
+      setIsMenuFixed(false)
     }
-  };
+  }
   
   const toggleMobileMenu = () => {
     setIsMobileOpen(!isMobileOpen);
-    console.log('menuOpen')
   };
   
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+      setWindowWidth(window.innerWidth)
+    }
     
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('scroll', handleScroll)
     
     return () => {
-      window.removeEventListener('resize', handleResize);
-      window.addEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('resize', handleResize)
+      window.addEventListener('scroll', handleScroll)
+    }
+  }, [])
   
   useEffect(() => {
     if (windowWidth < 768) {
@@ -49,29 +46,32 @@ export const Header = () => {
       setShowMobileMenu(false)
       setIsMobileOpen(false)
     }
-  }, [windowWidth]);
+  }, [windowWidth])
   
   return (
     <HeaderContainer fixed={isMenuFixed ? 'fixed' : 'noFixed'}>
       <HeaderContent>
-        <Logo src={logo} alt="logo" style={{width: '40px'}}/>
+        <Logo
+          src={logo}
+          alt="logo"
+          style={{width: '40px'}}
+        />
         {
-          showMobileMenu
-            ? <MenuMobileContainer onClick={toggleMobileMenu}>
-              <FontAwesomeIcon
-                icon={faBars}
-                size={'2x'}
-              />
+          showMobileMenu ? (
+            <MenuMobileContainer onClick={toggleMobileMenu}>
+              <FontAwesomeIcon icon={faBars} size={'2x'}/>
             </MenuMobileContainer>
-            : <NavMenu type={'desktop'}/>
-        }
+          ) : (
+            <NavMenu
+              type={'desktop'}
+              toggleMobileMenu={toggleMobileMenu}/>
+          )}
       </HeaderContent>
       
       <MenuMobileDrawer
-        setIsMobileOpen={setIsMobileOpen}
+        toggleMobileMenu={toggleMobileMenu}
         isMobileOpen={isMobileOpen}
       />
-    
     </HeaderContainer>
-  );
-};
+  )
+}
