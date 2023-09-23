@@ -27,8 +27,8 @@ export const CarouselCards: React.FC<Interface> = ({setOpen, projects, setProjec
   return (
     <Carrossel
       style={{
-        '--swiper-navigation-color': theme["color-line"],
-        '--swiper-pagination-color': theme["color-line"],
+        // '--swiper-navigation-color': theme["color-line"],
+        // '--swiper-pagination-color': theme["color-line"],
         padding: theme["spacing-small"]
       }}
       pagination={{
@@ -48,7 +48,7 @@ export const CarouselCards: React.FC<Interface> = ({setOpen, projects, setProjec
       loop={true}
     >
       {
-        projects?.map((slideContent: myProjectsInterface, index: number) => {
+        projects?.map((slideContent: any, index: number) => {
           return (
             <SwiperSlide
               key={index}
