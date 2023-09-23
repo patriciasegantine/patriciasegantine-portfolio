@@ -38,7 +38,7 @@ export const Experience = () => {
     <ExperienceContainer id="experience">
       <SectionTitle>Experience</SectionTitle>
       <Subtitle>
-        Lorem ipsum dolor sit amet, consectetur adipisicing.
+        I'll share my career journey and significant projects, shaping my expertise in front-end development
       </Subtitle>
       
       <ExperienceContent>
