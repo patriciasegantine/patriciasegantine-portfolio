@@ -1,5 +1,5 @@
 import { NLWContainer } from "./nlw.styles.ts";
-import { SectionTitle, Subtitle } from "../../global.styles.ts";
+import { SectionDescription, SectionSubtitle, SectionTitle } from "../../global.styles.ts";
 import { useEffect, useState } from "react";
 import { nlwProjects } from "./nlwProjects.ts";
 import { CarouselCards } from "../../components/carousel/carousel.tsx";
@@ -34,11 +34,12 @@ export const Nlw = () => {
   
   return (
     <NLWContainer id="nextLevelWeek">
+      <SectionSubtitle>collaborate work </SectionSubtitle>
       <SectionTitle>Next Level Week</SectionTitle>
-      <Subtitle>
+      <SectionDescription>
         Next Level Week is an immersion experience that challenged me to go above and beyond in web development. I
-        developed exciting projects, expanding my skills and collaborating with talented developers
-      </Subtitle>
+        developed exciting projects, expanding my skills and collaborating with talented developers.
+      </SectionDescription>
       
       <CarouselCards
         setOpen={setOpen}

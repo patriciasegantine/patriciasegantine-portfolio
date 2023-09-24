@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
-import { NavMenu } from "../navMenu/navMenu.tsx";
+import { NavMenu } from "../nav-menu/nav-menu.tsx";
 import { theme } from "../../theme.ts";
 import { Logo } from "../header/header.styles.ts";
 import logo from "../../assets/img/logo.png";

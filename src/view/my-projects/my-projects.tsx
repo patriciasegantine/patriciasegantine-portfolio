@@ -1,12 +1,5 @@
-import {
-  Card,
-  CardBoxImg,
-  DescriptionBox,
-  IconContainer,
-  MyProjectsContainer,
-  ToolsBox,
-} from './my-projects.styles.ts'
-import { SectionTitle, Subtitle } from '../../global.styles.ts'
+import { Card, CardBoxImg, DescriptionBox, MyProjectsContainer } from './my-projects.styles.ts'
+import { SectionDescription, SectionSubtitle, SectionTitle, Tools, ToolsBox } from '../../global.styles.ts'
 
 import { useState } from "react";
 import { myProjects } from "./my-projects-obj.ts";
@@ -25,11 +18,13 @@ export const MyProjects = () => {
   
   return (
     <MyProjectsContainer id="myProjects">
+      <SectionSubtitle>My Work</SectionSubtitle>
       <SectionTitle>My Projects</SectionTitle>
-      <Subtitle>
-        Discover my recent and exciting projects below. Click on each project for details about the technologies used
-        and my role in development
-      </Subtitle>
+      <SectionDescription>
+        Explore below some of my recent and exciting projects. Each project represents an opportunity to apply my
+        front-end skills and craft exceptional solutions. Click on each project for more details about the technologies
+        used and my role in development
+      </SectionDescription>
       
       <Grid container spacing={4}>
         {myProjects?.map((project, index) => {
@@ -49,9 +44,9 @@ export const MyProjects = () => {
                 <ToolsBox>
                   {project.tools.map((tool) => {
                     return (
-                      <IconContainer key={tool.id}>
+                      <Tools key={tool.id}>
                         <img src={tool.src} alt={tool.title} title={tool.title}/>
-                      </IconContainer>
+                      </Tools>
                     )
                   })}
                 </ToolsBox>

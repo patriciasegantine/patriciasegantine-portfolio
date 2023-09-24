@@ -27,8 +27,7 @@ export const InfoContactBox = styled.div`
 
 export const InfoContactBoxFlex = styled.div`
   display: flex;
-  gap: ${theme["spacing-extra-small"]};
-  margin-bottom: ${theme["spacing-small"]};
+  margin-bottom: ${theme["spacing-extra-small"]};
 `
 
 export const InfoTitle = styled.span`

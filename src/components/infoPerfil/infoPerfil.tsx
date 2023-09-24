@@ -1,5 +1,5 @@
 import { SocialMediaContainer } from "../../view/about/about.styles.ts";
-import { Subtitle } from "../../global.styles.ts";
+import { SectionSubtitle } from "../../global.styles.ts";
 import { SocialMedia } from "../social-media/social-media.tsx";
 import { InfoPerfilContent } from "./InfoPerfil.styles.ts";
 
@@ -22,9 +22,9 @@ export const InfoPerfil = () => {
       </p>
       
       <SocialMediaContainer>
-        <Subtitle>
+        <SectionSubtitle>
           My socials media
-        </Subtitle>
+        </SectionSubtitle>
         <SocialMedia/>
       </SocialMediaContainer>
     

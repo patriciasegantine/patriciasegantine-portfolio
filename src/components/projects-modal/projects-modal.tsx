@@ -82,7 +82,6 @@ export const ProjectsModal: React.FC<ProjectsModal> = ({open, setOpen, title, pr
                       )
                     })
                   }
-                
                 </ItemBox>
                 
                 <ItemBox>
