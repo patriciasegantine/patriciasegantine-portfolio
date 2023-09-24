@@ -51,21 +51,32 @@ export const Title = styled.h1`
   font-weight: 700;
 `
 
-export const Subtitle = styled.h3`
-  font-family: ${theme["font-primary"]};
-  font-size: ${theme["font-size-m"]};
-  letter-spacing: 3px;
-  font-weight: 500;
-  margin-bottom: ${theme["spacing-small"]};
-  color: ${theme["color-neutral-light"]};
-`
-
-export const SectionTitle = styled.h3`
+export const SectionTitle = styled.h2`
   font-family: ${theme["font-secondary"]};
   font-size: ${theme["font-size-xxl"]};
   color: ${theme["color-highlight"]};
   font-weight: 500;
-  margin-top: ${theme["spacing-regular"]};
+  text-transform: uppercase;
+`
+
+export const SectionSubtitle = styled.span`
+  font-family: ${theme["font-primary"]};
+  font-size: ${theme["font-size-s"]};
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: ${theme["color-neutral-light"]};
+  text-transform: uppercase;
+`
+
+export const SectionDescription = styled.span`
+  display: block;
+  font-family: ${theme["font-primary"]};
+  font-size: ${theme["font-size-m"]};
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: ${theme["color-neutral-light"]};
+  max-width: 80%;
+  margin-bottom: ${theme["spacing-regular"]};
 `
 
 export const Destaque = styled.h4`
@@ -75,6 +86,39 @@ export const Destaque = styled.h4`
   text-transform: uppercase;
   font-weight: 500;
   margin-bottom: ${theme["spacing-small"]};
+`
+
+export const ToolsBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: ${theme['spacing-small']};
+`
+
+export const Tools = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 50%;
+  background: ${theme['background-color-1']};
+  border: 2px solid ${theme['color-line']};
+  box-shadow: ${theme['shadow-primary']};
+  opacity: .8;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+
+  @media (max-width: ${theme.tablet}) {
+    padding: 8px;
+
+    img {
+      width: 15px;
+      height: 15px;
+    }
+  }
 `
 
 export const muiTheme = createTheme({

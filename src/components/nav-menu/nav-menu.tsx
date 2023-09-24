@@ -7,9 +7,9 @@ import {
   faRocket,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons'
-import { Link, LinkContainer, NavContainer, } from './navMenu.styles.ts'
+import { Link, LinkContainer, NavContainer, } from './nav-menu.styles.ts'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { optionsEnum, optionsEnumLabel } from './enumNav.ts'
+import { optionsEnum, optionsEnumLabel } from './nav-menu-enum.ts'
 
 interface NavInterface {
   type: 'mobile' | 'desktop'

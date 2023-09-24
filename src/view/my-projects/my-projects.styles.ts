@@ -33,30 +33,6 @@ export const CardBoxImg = styled.div`
   }
 `
 
-export const ToolsBox = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: ${theme['spacing-small']};
-`
-
-export const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  border-radius: 50%;
-  background: ${theme['background-color-1']};
-  border: 2px solid ${theme['color-line']};
-  box-shadow: ${theme['shadow-primary']};
-  opacity: .8;
-
-  img {
-    width: 25px;
-    height: 25px;
-  }
-`
-
 export const ItemBox = styled.div`
   margin-bottom: ${theme["spacing-small"]};
   color: ${theme["color-social-media"]};

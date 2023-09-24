@@ -14,9 +14,9 @@ export const HeaderContainer = styled.header<{ fixed: 'fixed' | 'noFixed' }>`
   ${(props) =>
           props.fixed === 'fixed' && css`
             position: fixed;
-            backdrop-filter: blur(80px);
             box-shadow: ${theme["shadow-primary"]};
             color: ${theme ["color-white"]};
+            background: ${theme["background-color-1"]};
           `}
 `
 

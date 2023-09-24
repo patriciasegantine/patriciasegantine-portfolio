@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { HeaderContainer, HeaderContent, Logo, MenuMobileContainer, } from './header.styles.ts'
 import { MenuMobileDrawer } from '../mobile-drawer/mobile-drawer.tsx'
-import { NavMenu } from '../navMenu/navMenu.tsx'
+import { NavMenu } from '../nav-menu/nav-menu.tsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../assets/img/logo.png'
