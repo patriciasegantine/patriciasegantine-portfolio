@@ -2,6 +2,10 @@
 
 Welcome to my portfolio! This is a showcase of my work and skills in web development.
 
+<img src="./src/assets/img/my-portfolio.png" alt="Harmony Shop">
+
+[Patricia Segantine Portfolio Website](https://patriciasegantine-portfolio.vercel.app/)
+
 ## Technologies Used
 
 - React
@@ -31,9 +35,14 @@ To run this project locally, follow the steps below:
 
 2. This will generate an optimized and minified version of your project in the `dist` directory.
 
-## Acknowledgment:
+## Development Note:
 
-### Development Note: Backend Implementation
+## Frontend Development
+
+Please be aware that this project is still under active development. While we strive to deliver a complete and
+feature-rich experience, some functionalities may not be fully operational or meet expectations at this time.
+
+## Backend Implementation
 
 Please be aware that, as of now, there are no backend implementations in place. However, I have plans to develop backend
 functionalities in the near future.
