@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Box, Grid, IconButton, Snackbar, TextField } from "@mui/material";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { inputBorderStyles } from "../../global.styles.ts";
 import { CustomButton, Form } from "../../view/contact/contact.styles.ts";
 import CloseIcon from '@mui/icons-material/Close';
-import { FakeSending } from "./contact-form.styles.ts";
+import { SendingMessage } from "./contact-form.styles.ts";
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string
@@ -21,11 +22,16 @@ export const ContactForm = () => {
     message: ''
   }
   
+  const contactForm = useRef() as React.MutableRefObject<HTMLFormElement>
+  
+  console.log('contactForm', contactForm)
+  
   const [isDisabled, setIsDisabled] = useState<boolean>(false)
   const [formDetails, setFormDetails] = useState<FormData>(formInitialDetails)
   const [buttonText, setButtonText] = useState<string>('Send')
   const [loading, setLoading] = React.useState<boolean>(false);
   const [openMessage, setOpenMessage] = useState<boolean>(false)
+  const [message, setMessage] = useState<string>()
   
   const onChangeInputValue = (value: string, type: 'name' | 'email' | 'message') => {
     
@@ -35,17 +41,33 @@ export const ContactForm = () => {
     })
   }
   
+  const failMessage = "Fail to send the message!";
+  const successMessage = "Message sent with Success!!";
+  
   const handleSubmit = (e: { preventDefault: () => void; }) => {
-    e.preventDefault()
-    setButtonText('Sending')
+    e.preventDefault();
     setLoading(true)
+    setButtonText('Sending')
     
-    setTimeout(() => {
-      setButtonText('Send')
-      setLoading(false)
-      setFormDetails(formInitialDetails)
-      setOpenMessage(true)
-    }, 2000)
+    emailjs.sendForm(
+      'service_enpzblf',
+      'template_q1sxs1k',
+      contactForm.current,
+      '8BZWzW0mNTQliZmQf'
+    )
+      .then(() => {
+        setLoading(false)
+        setButtonText('Send')
+        setMessage(successMessage)
+        setOpenMessage(true)
+        setFormDetails(formInitialDetails)
+      }, (error) => {
+        console.log(error.text);
+        setMessage(failMessage)
+        setOpenMessage(true)
+        
+      });
+    
   };
   
   const handleCloseMessage = () => {
@@ -80,11 +102,13 @@ export const ContactForm = () => {
     <Form
       component="form"
       onSubmit={handleSubmit}
+      ref={contactForm}
     >
       <Grid container rowSpacing={3}>
         
         <Grid item xs={12} md={12}>
           <TextField
+            name="user_name"
             color={'primary'}
             id="outlined-controlled"
             label="Name"
@@ -102,6 +126,7 @@ export const ContactForm = () => {
         
         <Grid item xs={12} md={12}>
           <TextField
+            name="user_email"
             id="outlined-controlled"
             type="email"
             label="Email"
@@ -117,6 +142,7 @@ export const ContactForm = () => {
         
         <Grid item xs={12} md={12}>
           <TextField
+            name="message"
             id="outlined-controlled"
             label="Message"
             type="text"
@@ -156,13 +182,9 @@ export const ContactForm = () => {
           onClose={handleCloseMessage}
           action={action}
           message={
-            <FakeSending>
-              <h2>Message not sent. </h2>
-              <p>
-                Please note that this is a simulation, and the message has not been sent as there is
-                currently no backend integration.
-              </p>
-            </FakeSending>
+            <SendingMessage>
+              <p>{message}</p>
+            </SendingMessage>
           }
         />
       </Box>

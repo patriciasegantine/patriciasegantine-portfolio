@@ -26,8 +26,6 @@ export const MyInformation = styled.div`
   }
 `
 
-export const FakeSending = styled.div`
+export const SendingMessage = styled.div`
   max-width: 300px;
-
-
 `
