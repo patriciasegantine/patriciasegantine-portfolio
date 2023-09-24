@@ -3,12 +3,11 @@ import { theme } from "../../theme.ts";
 
 export const HeaderContainer = styled.header<{ fixed: 'fixed' | 'noFixed' }>`
   width: 100%;
-  padding: ${theme["spacing-regular"]};
+  padding: ${theme["spacing-small"]};
   font-family: ${theme["font-secondary"]};
   transition: 0.3s;
   top: 0;
   z-index: 999;
-  grid-area: header;
   border-bottom: 1px solid ${theme["color-line"]};
 
   ${(props) =>

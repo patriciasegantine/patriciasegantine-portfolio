@@ -5,6 +5,7 @@ import { NavMenu } from '../nav-menu/nav-menu.tsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../assets/img/logo.png'
+import { GoToTop } from "../go-to-top/go-to-top.tsx";
 
 export const Header = () => {
   const [isMenuFixed, setIsMenuFixed] = useState<boolean>(false)
@@ -72,6 +73,8 @@ export const Header = () => {
         toggleMobileMenu={toggleMobileMenu}
         isMobileOpen={isMobileOpen}
       />
+      
+      <GoToTop isMenuFixed={isMenuFixed}/>
     </HeaderContainer>
   )
 }

@@ -63,7 +63,6 @@ export const MyProjects = () => {
         title={myProjects[projectIndex]?.name}
         projects={myProjects}
         projectIndex={projectIndex}
-        horizontal={false}
       />
     </MyProjectsContainer>
   )

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { theme } from "../../theme.ts";
 
@@ -13,14 +13,8 @@ export const ModalBody = styled.div`
   margin-bottom: 1.250rem;
 `
 
-export const ModalFooter = styled.div`
-  display: flex;
-  justify-content: start;
-`
-
 export const ModalTitle = styled.h2`
   color: ${theme["color-white"]};
-
 `
 
 export const ModalClose = styled(FontAwesomeIcon)`
@@ -35,18 +29,13 @@ export const ModalClose = styled(FontAwesomeIcon)`
   }
 `
 
-export const ToolBox = styled.span`
-  //margin-right: 1rem;
-
-`
+export const ToolBox = styled.span``
 
 export const Tool = styled.span`
   margin-right: .5rem;
 `
 
-export const ModalContent = styled.div<{
-  horizontal: boolean
-}>`
+export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: ${theme["spacing-regular"]};
@@ -55,18 +44,6 @@ export const ModalContent = styled.div<{
     height: 300px;
     border-radius: ${theme["border-radius-primary"]};
   }
-
-  ${props => props.horizontal && css`
-    flex-direction: row;
-    column-gap: ${theme["spacing-regular"]};
-
-
-    & img {
-      border-radius: ${theme["border-radius-primary"]};
-      width: 350px;
-      height: 350px;
-    }
-  `}
 `
 
 export const BoxImgModal = styled.div`

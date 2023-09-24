@@ -3,7 +3,6 @@ export const theme = {
   // color
   'color-white': '#FFF',
   'color-highlight': '#996DFF',
-  // 'color-highlight': '#ff014f',
   
   'color-neutral-light': '#c4cfde',
   
@@ -15,7 +14,6 @@ export const theme = {
   
   'background-color-1': '#212428',
   'background-color-2': 'linear-gradient(145deg, #1e2024, #23272b)',
-  // 'background-color-3': 'linear-gradient(to right bottom, #212428, #16181c)',
   'background-color-3': '#212428',
   
   // font family
@@ -23,12 +21,12 @@ export const theme = {
   'font-secondary': 'Montserrat, sans-serif',
   
   // font size
-  'font-size-xs': '12px',
-  'font-size-s': '14px',
-  'font-size-m': '16px',
-  'font-size-l': '24px',
-  'font-size-xl': '36px',
-  'font-size-xxl': '48px',
+  'font-size-xs': '.75rem',
+  'font-size-s': '0.875rem',
+  'font-size-m': '1rem',
+  'font-size-l': '1.5rem',
+  'font-size-xl': '2.25rem',
+  'font-size-xxl': '3rem',
   
   'line-height-s': '1.5',
   'line-height-m': '1.6',

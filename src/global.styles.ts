@@ -18,6 +18,10 @@ export const GlobalStyle = createGlobalStyle`
     background: ${theme["background-color-1"]};
     color: ${theme['color-neutral-light']};
     -webkit-font-smoothing: antialiased;
+
+    @media (max-width: ${theme.laptop}) {
+      font-size: 90%;
+    }
   }
 
   .vertical-timeline {
@@ -31,6 +35,7 @@ export const GlobalStyle = createGlobalStyle`
   .vertical-timeline-element-icon {
     box-shadow: 0 0 0 4px ${theme ["color-neutral-light"]};
   }
+
 `
 
 export const SectionContainer = styled.section`
@@ -57,6 +62,10 @@ export const SectionTitle = styled.h2`
   color: ${theme["color-highlight"]};
   font-weight: 500;
   text-transform: uppercase;
+
+  @media (max-width: ${theme.laptop}) {
+    font-size: ${theme["font-size-xl"]};
+  }
 `
 
 export const SectionSubtitle = styled.span`
@@ -77,6 +86,10 @@ export const SectionDescription = styled.span`
   color: ${theme["color-neutral-light"]};
   max-width: 80%;
   margin-bottom: ${theme["spacing-regular"]};
+
+  @media (max-width: ${theme.laptop}) {
+    width: 100%;
+  }
 `
 
 export const Destaque = styled.h4`

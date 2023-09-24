@@ -35,10 +35,9 @@ interface ProjectsModal {
   title: string
   projects: myProjectsInterface[]
   projectIndex: number
-  horizontal: boolean
 }
 
-export const ProjectsModal: React.FC<ProjectsModal> = ({open, setOpen, title, projects, projectIndex, horizontal}) => {
+export const ProjectsModal: React.FC<ProjectsModal> = ({open, setOpen, title, projects, projectIndex}) => {
   
   const handleClose = () => setOpen(false);
   
@@ -59,7 +58,7 @@ export const ProjectsModal: React.FC<ProjectsModal> = ({open, setOpen, title, pr
           </ModalHeader>
           
           <ModalBody>
-            <ModalContent horizontal={horizontal}>
+            <ModalContent>
               <BoxImgModal>
                 <img src={projects[projectIndex]?.img} alt=""/>
               </BoxImgModal>

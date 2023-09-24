@@ -53,7 +53,6 @@ export const Nlw = () => {
         title={nlwProjects[projectIndex]?.name}
         projects={nlwProjects}
         projectIndex={projectIndex}
-        horizontal={false}
       />
     </NLWContainer>
   );

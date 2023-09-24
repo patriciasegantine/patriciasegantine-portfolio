@@ -4,6 +4,10 @@ import { theme } from "../../theme.ts";
 
 export const AboutContainer = styled(SectionContainer)`
   margin-top: ${theme["spacing-extra-big"]};
+
+  @media (max-width: ${theme.laptop}) {
+    margin-top: ${theme["spacing-extra-regular"]};
+  }
 `
 
 export const TitlePerfil = styled.div`
