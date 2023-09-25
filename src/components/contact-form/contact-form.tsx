@@ -14,12 +14,6 @@ interface FormData {
   message: string
 }
 
-interface FormError {
-  name: boolean
-  email: boolean
-  message: boolean
-}
-
 type TypeForm = 'name' | 'email' | 'message'
 
 export const ContactForm = () => {
