@@ -14,6 +14,9 @@ Welcome to my portfolio! This is a showcase of my work and skills in web develop
 - Styled Components
 - Font Awesome Icons
 - React-vertical-timeline-component
+- Material UI
+- Swiper
+- Vercel
 
 ## Getting Started
 
@@ -37,18 +40,8 @@ To run this project locally, follow the steps below:
 
 ## Development Note:
 
-## Frontend Development
-
 Please be aware that this project is still under active development. While we strive to deliver a complete and
 feature-rich experience, some functionalities may not be fully operational or meet expectations at this time.
-
-## Backend Implementation
-
-Please be aware that, as of now, there are no backend implementations in place. However, I have plans to develop backend
-functionalities in the near future.
-
-While my current focus remains on the frontend and core features, I am fully committed to expanding my project to
-include robust backend components. Stay tuned for updates as I work towards a more comprehensive solution.
 
 I greatly appreciate your patience and support.
 
