@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Fade, Modal } from "@mui/material";
-import { theme } from "../../theme.ts";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import {
   BoxImgModal,
@@ -8,25 +7,13 @@ import {
   ModalClose,
   ModalContent,
   ModalHeader,
+  modalStyle,
   ModalTitle,
   Tool,
   ToolBox
 } from "./projects-modal.styles.ts";
 import { ItemBox, LinkGitHub, LinksBox, LinksBoxItems, TitleItem } from "../../view/my-projects/my-projects.styles.ts";
 import { myProjectsInterface } from "../../type/projects.ts";
-
-const style = {
-  position: 'absolute' as const,
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  bgcolor: `${theme["background-color-1"]}`,
-  border: '2px solid transparent',
-  borderRadius: `${theme["border-radius-primary"]}`,
-  boxShadow: 24,
-  p: 6,
-  outline: "transparent",
-};
 
 interface ProjectsModal {
   open: boolean
@@ -50,7 +37,7 @@ export const ProjectsModal: React.FC<ProjectsModal> = ({open, setOpen, title, pr
     >
       
       <Fade in={open}>
-        <Box sx={style}>
+        <Box sx={{...modalStyle}}>
           <ModalHeader>
             <ModalTitle id="modal-title">{title}</ModalTitle>
             <ModalClose icon={faCircleXmark} size={"xl"} onClick={handleClose}/>

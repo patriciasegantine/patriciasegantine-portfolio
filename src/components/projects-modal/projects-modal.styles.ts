@@ -50,3 +50,16 @@ export const BoxImgModal = styled.div`
   display: flex;
   justify-content: center;
 `
+
+export const modalStyle = {
+  position: 'absolute' as const,
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  bgcolor: `${theme["background-color-1"]}`,
+  border: '2px solid transparent',
+  borderRadius: `${theme["border-radius-primary"]}`,
+  boxShadow: 24,
+  p: {xs: 2, md: 6},
+  outline: "transparent",
+};
