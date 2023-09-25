@@ -2,7 +2,6 @@ import React from 'react';
 import { SwiperSlide } from 'swiper/react';
 import { CardCarousel, Carrossel } from "../../view/nlw/nlw.styles.ts";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { theme } from "../../theme.ts";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -13,7 +12,6 @@ import { myProjectsInterface } from "../../type/projects.ts";
 
 interface Interface {
   setOpen: React.Dispatch<boolean>
-  // projects: myProjectsInterface
   setProjectIndex: React.Dispatch<number>
   slideQuantity: number
 }
@@ -37,11 +35,6 @@ export const CarouselCards: React.FC<Interface> = ({setOpen, setProjectIndex, sl
   
   return (
     <Carrossel
-      style={{
-        // '--swiper-navigation-color': theme["color-line"],
-        // '--swiper-pagination-color': theme["color-line"],
-        padding: theme["spacing-small"]
-      }}
       pagination={{
         type: 'bullets',
         clickable: true

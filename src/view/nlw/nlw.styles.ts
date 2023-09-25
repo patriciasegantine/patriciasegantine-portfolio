@@ -4,17 +4,21 @@ import { theme } from "../../theme.ts";
 import { Swiper } from "swiper/react";
 
 export const Carrossel = styled(Swiper)`
-    //box-shadow: ${theme["shadow-primary"]};
   border-radius: ${theme["border-radius-primary"]};
 
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: ${theme["color-social-media"]};
+  }
+
+  .swiper-pagination-bullet {
+    background-color: ${theme["color-social-media"]};
+  }
 `
 
-export const NLWContainer = styled(SectionContainer)`
+export const NLWContainer = styled(SectionContainer)``
 
-`
 export const CardCarousel = styled.div`
-    //border: 1px solid ${theme["color-social-media"]};
-
   h3 {
     text-align: center;
     padding-top: ${theme["spacing-small"]};

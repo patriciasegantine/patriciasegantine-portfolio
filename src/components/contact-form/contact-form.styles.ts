@@ -35,4 +35,8 @@ export const FilledRequired = styled.p`
   text-align: center;
   color: ${theme["color-social-media"]};
   transition: .2s;
+
+  @media (max-width: ${theme.tablet}) {
+    font-size: 10px;
+  }
 `
