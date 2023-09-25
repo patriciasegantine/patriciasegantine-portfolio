@@ -20,7 +20,6 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  // width: 700,
   bgcolor: `${theme["background-color-1"]}`,
   border: '2px solid transparent',
   borderRadius: `${theme["border-radius-primary"]}`,

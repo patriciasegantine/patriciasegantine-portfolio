@@ -41,8 +41,8 @@ export const ModalContent = styled.div`
   row-gap: ${theme["spacing-regular"]};
 
   img {
-    height: 300px;
     border-radius: ${theme["border-radius-primary"]};
+    width: 100%;
   }
 `
 
