@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   faAddressCard,
   faEnvelope,
@@ -10,6 +10,7 @@ import {
 import { Link, LinkContainer, NavContainer, } from './nav-menu.styles.ts'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { optionsEnum, optionsEnumLabel } from './nav-menu-enum.ts'
+import { useMainContext } from "../../context/main-context.tsx";
 
 interface NavInterface {
   type: 'mobile' | 'desktop'
@@ -51,7 +52,9 @@ const menuOptions: MenuOptionsInterface[] = [
 ]
 
 export const NavMenu: React.FC<NavInterface> = ({type, toggleMobileMenu}) => {
-  const [active, setActive] = useState<string>("about")
+  const {activeSection} = useMainContext()
+  
+  const [active, setActive] = useState<string | null>("about")
   
   const handleSelectLink = (id: string) => {
     const sectionElement = document.getElementById(id)
@@ -60,6 +63,10 @@ export const NavMenu: React.FC<NavInterface> = ({type, toggleMobileMenu}) => {
     if (sectionElement) sectionElement.scrollIntoView({behavior: 'smooth'})
     if (type === 'mobile') toggleMobileMenu()
   }
+  
+  useEffect(() => {
+    if (activeSection) setActive(activeSection)
+  }, [activeSection]);
   
   return (
     <NavContainer type={type}>

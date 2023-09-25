@@ -1,16 +1,26 @@
+import React, { useEffect, useState } from "react";
 import { NLWContainer } from "./nlw.styles.ts";
 import { SectionDescription, SectionSubtitle, SectionTitle } from "../../global.styles.ts";
-import { useEffect, useState } from "react";
 import { nlwProjects } from "./nlwProjects.ts";
 import { CarouselCards } from "../../components/carousel/carousel.tsx";
 import { ProjectsModal } from "../../components/projects-modal/projects-modal.tsx";
+import { useInView } from "react-intersection-observer";
+import { useMainContext } from "../../context/main-context.tsx";
 
-export const Nlw = () => {
-  
+interface NlwProps {
+  id: string;
+}
+
+export const Nlw: React.FC<NlwProps> = ({id}) => {
+  const {activeSection, setActiveSection} = useMainContext();
   const [open, setOpen] = useState<boolean>(false);
   const [projectIndex, setProjectIndex] = useState<number>(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const [slideQuantity, setSlideQuantity] = useState<number>(2)
+  
+  const [ref, inView] = useInView({
+    threshold: 0.4,
+  });
   
   useEffect(() => {
     const handleResize = () => {
@@ -32,8 +42,14 @@ export const Nlw = () => {
     }
   }, [windowWidth]);
   
+  useEffect(() => {
+    if (inView) {
+      setActiveSection(id)
+    }
+  }, [id, inView, activeSection]);
+  
   return (
-    <NLWContainer id="nextLevelWeek">
+    <NLWContainer id={id} ref={ref}>
       <SectionSubtitle>collaborate work </SectionSubtitle>
       <SectionTitle>Next Level Week</SectionTitle>
       <SectionDescription>

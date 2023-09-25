@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { VerticalTimeline, VerticalTimelineElement, } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import { Laptop } from '../../assets/icon/laptop.tsx'
@@ -5,10 +6,26 @@ import { theme } from '../../theme.ts'
 import { SectionDescription, SectionSubtitle, SectionTitle } from '../../global.styles.ts'
 import { ExperienceContainer, ExperienceContent } from './experience.styles.ts'
 import { myExperiences } from "./myexperiences.ts"
+import { useInView } from "react-intersection-observer";
+import { useMainContext } from "../../context/main-context.tsx";
 
-export const Experience = () => {
+interface ExperienceProps {
+  id: string
+}
+
+export const Experience: React.FC<ExperienceProps> = ({id}) => {
+  const {activeSection, setActiveSection} = useMainContext()
+  const [ref, inView] = useInView({
+    threshold: 0.4,
+  });
+  
+  useEffect(() => {
+    if (inView) {
+      setActiveSection(id)
+    }
+  }, [id, inView, activeSection]);
   return (
-    <ExperienceContainer id="experience">
+    <ExperienceContainer id={id} ref={ref}>
       <SectionSubtitle>What i have done so far</SectionSubtitle>
       <SectionTitle>Work Experience</SectionTitle>
       <SectionDescription>

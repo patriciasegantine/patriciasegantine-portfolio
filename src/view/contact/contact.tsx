@@ -1,12 +1,30 @@
+import React, { useEffect } from "react";
 import { SectionDescription, SectionSubtitle, SectionTitle } from "../../global.styles.ts";
 import { ContactContainer } from "../../components/contact-form/contact-form.styles.ts";
 import { ContactForm } from "../../components/contact-form/contact-form.tsx";
 import { Grid } from "@mui/material";
 import { MyInfoContact } from "../../components/my-info-contact/my-info-contact.tsx";
+import { useInView } from "react-intersection-observer";
+import { useMainContext } from "../../context/main-context.tsx";
 
-export const Contact = () => {
+interface ContactProps {
+  id: string;
+}
+
+export const Contact: React.FC<ContactProps> = ({id}) => {
+  const {activeSection, setActiveSection} = useMainContext()
+  const [ref, inView] = useInView({
+    threshold: 0.4,
+  });
+  
+  useEffect(() => {
+    if (inView) {
+      setActiveSection(id)
+    }
+  }, [id, inView, activeSection]);
+  
   return (
-    <ContactContainer id='contact'>
+    <ContactContainer id={id} ref={ref}>
       <SectionSubtitle>Get in Touch</SectionSubtitle>
       <SectionTitle>Contact</SectionTitle>
       <SectionDescription>

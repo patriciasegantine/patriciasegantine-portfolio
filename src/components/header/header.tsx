@@ -65,7 +65,8 @@ export const Header = () => {
           ) : (
             <NavMenu
               type={'desktop'}
-              toggleMobileMenu={toggleMobileMenu}/>
+              toggleMobileMenu={toggleMobileMenu}
+            />
           )}
       </HeaderContent>
       

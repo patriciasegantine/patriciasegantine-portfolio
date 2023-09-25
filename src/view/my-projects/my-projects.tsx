@@ -1,12 +1,22 @@
+import React, { useEffect, useState } from "react";
 import { Card, CardBoxImg, DescriptionBox, MyProjectsContainer } from './my-projects.styles.ts'
 import { SectionDescription, SectionSubtitle, SectionTitle, Tools, ToolsBox } from '../../global.styles.ts'
 
-import { useState } from "react";
 import { myProjects } from "./my-projects-obj.ts";
 import { Grid } from "@mui/material";
 import { ProjectsModal } from "../../components/projects-modal/projects-modal.tsx";
+import { useInView } from "react-intersection-observer";
+import { useMainContext } from "../../context/main-context.tsx";
 
-export const MyProjects = () => {
+interface myProjectsProps {
+  id: string;
+}
+
+export const MyProjects: React.FC<myProjectsProps> = ({id}) => {
+  const {activeSection, setActiveSection} = useMainContext()
+  const [ref, inView] = useInView({
+    threshold: 0.4,
+  });
   
   const [open, setOpen] = useState<boolean>(false);
   const [projectIndex, setProjectIndex] = useState<number>(0);
@@ -16,8 +26,14 @@ export const MyProjects = () => {
     setProjectIndex(index)
   };
   
+  useEffect(() => {
+    if (inView) {
+      setActiveSection(id)
+    }
+  }, [id, inView, activeSection]);
+  
   return (
-    <MyProjectsContainer id="myProjects">
+    <MyProjectsContainer ref={ref} id={id}>
       <SectionSubtitle>My Work</SectionSubtitle>
       <SectionTitle>My Projects</SectionTitle>
       <SectionDescription>
