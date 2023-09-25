@@ -88,7 +88,7 @@ export const SectionDescription = styled.span`
   margin-bottom: ${theme["spacing-regular"]};
 
   @media (max-width: ${theme.laptop}) {
-    width: 100%;
+    max-width: 100%;
   }
 `
 

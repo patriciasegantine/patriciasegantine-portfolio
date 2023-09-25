@@ -62,4 +62,5 @@ export const modalStyle = {
   boxShadow: 24,
   p: {xs: 2, md: 6},
   outline: "transparent",
+  width: {xs: 350, md: 700}
 };
