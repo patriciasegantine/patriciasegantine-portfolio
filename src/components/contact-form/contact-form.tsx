@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { inputBorderStyles } from "../../global.styles.ts";
 import { CustomButton, Form } from "../../view/contact/contact.styles.ts";
 import CloseIcon from '@mui/icons-material/Close';
-import { SendingMessage } from "./contact-form.styles.ts";
+import { FilledRequired, SendingMessage } from "./contact-form.styles.ts";
 import emailjs from '@emailjs/browser';
 
 interface FormData {
@@ -13,6 +13,14 @@ interface FormData {
   email: string
   message: string
 }
+
+interface FormError {
+  name: boolean
+  email: boolean
+  message: boolean
+}
+
+type TypeForm = 'name' | 'email' | 'message'
 
 export const ContactForm = () => {
   
@@ -24,17 +32,13 @@ export const ContactForm = () => {
   
   const contactForm = useRef() as React.MutableRefObject<HTMLFormElement>
   
-  console.log('contactForm', contactForm)
-  
-  const [isDisabled, setIsDisabled] = useState<boolean>(false)
+  const [isDisabled, setIsDisabled] = useState<boolean>(true)
   const [formDetails, setFormDetails] = useState<FormData>(formInitialDetails)
-  const [buttonText, setButtonText] = useState<string>('Send')
   const [loading, setLoading] = React.useState<boolean>(false);
   const [openMessage, setOpenMessage] = useState<boolean>(false)
   const [message, setMessage] = useState<string>()
   
-  const onChangeInputValue = (value: string, type: 'name' | 'email' | 'message') => {
-    
+  const onChangeInputValue = (value: string, type: TypeForm) => {
     setFormDetails({
       ...formDetails,
       [type]: value
@@ -44,10 +48,8 @@ export const ContactForm = () => {
   const failMessage = "Fail to send the message!";
   const successMessage = "Message sent with Success!!";
   
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
+  const fetchSendMessage = () => {
     setLoading(true)
-    setButtonText('Sending')
     
     emailjs.sendForm(
       'service_enpzblf',
@@ -57,7 +59,6 @@ export const ContactForm = () => {
     )
       .then(() => {
         setLoading(false)
-        setButtonText('Send')
         setMessage(successMessage)
         setOpenMessage(true)
         setFormDetails(formInitialDetails)
@@ -65,14 +66,15 @@ export const ContactForm = () => {
         console.log(error.text);
         setMessage(failMessage)
         setOpenMessage(true)
-        
       });
-    
+  }
+  
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    fetchSendMessage()
   };
   
-  const handleCloseMessage = () => {
-    setOpenMessage(!openMessage)
-  }
+  const handleCloseMessage = () => setOpenMessage(!openMessage)
   
   const action = (
     <div>
@@ -88,9 +90,7 @@ export const ContactForm = () => {
   );
   
   useEffect(() => {
-    const isFieldsFilled = formDetails.name !== '' && formDetails.email !== '' && formDetails.message !== ''
-    
-    if (isFieldsFilled) {
+    if (formDetails.name && formDetails.email && formDetails.message) {
       setIsDisabled(false)
     } else {
       setIsDisabled(true)
@@ -98,85 +98,90 @@ export const ContactForm = () => {
   }, [formDetails]);
   
   return (
-    
-    <Form
-      component="form"
-      onSubmit={handleSubmit}
-      ref={contactForm}
-    >
-      <Grid container rowSpacing={3}>
-        
-        <Grid item xs={12} md={12}>
-          <TextField
-            name="user_name"
-            color={'primary'}
-            id="outlined-controlled"
-            label="Name"
-            type="text"
-            required
-            variant="outlined"
-            value={formDetails.name}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              onChangeInputValue(event.target.value, 'name');
-            }}
-            fullWidth
-            sx={inputBorderStyles}
-          />
+    <>
+      <Form
+        onSubmit={handleSubmit}
+        ref={contactForm}
+      >
+        <Grid container rowSpacing={3}>
+          
+          <Grid item xs={12} md={12}>
+            <TextField
+              name="user_name"
+              color={'primary'}
+              id="outlined-controlled"
+              label="Name"
+              type="text"
+              required
+              variant="outlined"
+              value={formDetails.name}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                onChangeInputValue(event.target.value, 'name');
+              }}
+              fullWidth
+              sx={inputBorderStyles}
+            />
+          </Grid>
+          
+          <Grid item xs={12} md={12}>
+            <TextField
+              name="user_email"
+              id="outlined-controlled"
+              type="email"
+              label="Email"
+              required
+              value={formDetails.email}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                onChangeInputValue(event.target.value, 'email');
+              }}
+              sx={inputBorderStyles}
+              fullWidth
+            />
+          </Grid>
+          
+          <Grid item xs={12} md={12}>
+            <TextField
+              name="message"
+              id="outlined-controlled"
+              label="Message"
+              type="text"
+              required
+              multiline
+              rows={5}
+              value={formDetails.message}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                onChangeInputValue(event.target.value, 'message');
+              }}
+              sx={inputBorderStyles}
+              fullWidth
+            />
+          </Grid>
+          
+          <Grid item xs={12} md={12}>
+            <CustomButton
+              type="submit"
+              variant="contained"
+              color={"primary"}
+              loading={loading}
+              loadingPosition="center"
+              endIcon={<FontAwesomeIcon icon={faPaperPlane} size={"xs"}/>}
+              size="large"
+              disabled={isDisabled}
+            >
+              Send
+            </CustomButton>
+            
+            {
+              isDisabled &&
+              <FilledRequired>To enable the button, all required fields must be filled in.</FilledRequired>
+            }
+          </Grid>
         </Grid>
-        
-        <Grid item xs={12} md={12}>
-          <TextField
-            name="user_email"
-            id="outlined-controlled"
-            type="email"
-            label="Email"
-            required
-            value={formDetails.email}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              onChangeInputValue(event.target.value, 'email');
-            }}
-            sx={inputBorderStyles}
-            fullWidth
-          />
-        </Grid>
-        
-        <Grid item xs={12} md={12}>
-          <TextField
-            name="message"
-            id="outlined-controlled"
-            label="Message"
-            type="text"
-            required
-            multiline
-            rows={5}
-            value={formDetails.message}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              onChangeInputValue(event.target.value, 'message');
-            }}
-            sx={inputBorderStyles}
-            fullWidth
-          />
-        </Grid>
-        
-        <Grid item xs={12} md={12}>
-          <CustomButton
-            type="submit"
-            variant="contained"
-            color={"primary"}
-            loading={loading}
-            loadingPosition="center"
-            endIcon={<FontAwesomeIcon icon={faPaperPlane} size={"xs"}/>}
-            size="large"
-            disabled={isDisabled}
-          >
-            {buttonText}
-          </CustomButton>
-        </Grid>
-      </Grid>
+      </Form>
       
       <Box sx={{width: 300}}>
         <Snackbar
-          autoHideDuration={10000}
+          autoHideDuration={5000}
           anchorOrigin={{vertical: "top", horizontal: "right"}}
           open={openMessage}
           onClose={handleCloseMessage}
@@ -188,6 +193,6 @@ export const ContactForm = () => {
           }
         />
       </Box>
-    </Form>
+    </>
   );
 };

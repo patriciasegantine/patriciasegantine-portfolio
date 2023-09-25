@@ -29,3 +29,10 @@ export const MyInformation = styled.div`
 export const SendingMessage = styled.div`
   max-width: 300px;
 `
+
+export const FilledRequired = styled.p`
+  font-size: ${theme["font-size-xs"]};
+  text-align: center;
+  color: ${theme["color-social-media"]};
+  transition: .2s;
+`

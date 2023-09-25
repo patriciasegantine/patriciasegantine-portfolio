@@ -2,7 +2,8 @@ import React from 'react';
 import { IconInterface } from "../../type/icons-types.ts";
 import { theme } from "../../theme.ts";
 
-export const Laptop: React.FC<IconInterface> = ({size = '20px', color = theme["color-gray-dark"]}) => {
+export const Laptop: React.FC<IconInterface> = ({size = '10px', color = theme["color-gray-dark"]}) => {
+  
   return (
     <picture>
       <svg

@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../../theme.ts";
-import { Box } from "@mui/material";
 import LoadingButton from '@mui/lab/LoadingButton';
 
-export const Form = styled(Box)`
+export const Form = styled.form`
   padding: ${theme['spacing-regular']};
   box-shadow: ${theme['shadow-primary']};
   border-radius: ${theme['border-radius-primary']};
@@ -15,10 +14,6 @@ export const CustomButton = styled(LoadingButton)`
   width: 100%;
   display: flex;
   align-items: center;
-
-  & .MuiButtonBase-root {
-    cursor: not-allowed !important;
-  }
 `
 
 export const InfoContactBox = styled.div`
