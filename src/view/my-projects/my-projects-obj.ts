@@ -1,15 +1,13 @@
-import { myProjectsInterface } from "../../type/projects.ts";
-import reactIcon from "../../assets/tools/react.svg";
-import typescript from "../../assets/tools/typescript.svg";
-import styledComponent from "../../assets/tools/styled-component.svg";
-import materialUI from "../../assets/tools/material-ui.svg";
-import redux from "../../assets/tools/redux.svg";
-import angular from "../../assets/tools/angular.svg";
-import vite from "../../assets/tools/vite.svg"
-import next from "../../assets/tools/next-js.svg"
-
-import harmony from "../../assets/projects/harmony.png"
-import comingSoon from "../../assets/projects/coming-soon.png"
+import { myProjectsInterface } from "@/type/projectsType.ts";
+import reactIcon from "@assets/tools/react.svg";
+import typescript from "@assets/tools/typescript.svg";
+import styledComponent from "@assets/tools/styled-component.svg";
+import materialUI from "@assets/tools/material-ui.svg";
+import redux from "@assets/tools/redux.svg";
+import angular from "@assets/tools/angular.svg";
+import vite from "@assets/tools/vite.svg"
+import harmony from "@assets/projects/harmony.png"
+import comingSoon from "@assets/projects/coming-soon.png"
 
 export const myProjects: myProjectsInterface[] = [
   {
@@ -28,32 +26,9 @@ export const myProjects: myProjectsInterface[] = [
     urlGiHub: "https://github.com/patriciasegantine/harmony-shop",
     urlWebsite: "https://harmony-shop.vercel.app/"
   },
+ 
   {
     id: 2,
-    name: 'Coming Soon',
-    img: comingSoon,
-    description: 'I\'m excited to share that there are more projects in the pipeline. Stay tuned for updates as I continue to build and expand my portfolio',
-    tools: [
-      {id: '01', title: 'Next', src: next},
-      {id: '02', title: 'Typescript', src: typescript},
-    ],
-    urlGiHub: "https://github.com/patriciasegantine/my-portfolio",
-    urlWebsite: "https://github.com/patriciasegantine/my-portfolio"
-  },
-  {
-    id: 3,
-    name: 'Coming Soon',
-    img: comingSoon,
-    description: 'I\'m excited to share that there are more projects in the pipeline. Stay tuned for updates as I continue to build and expand my portfolio',
-    tools: [
-      {id: '01', title: 'React', src: reactIcon},
-      {id: '02', title: 'Styled Componen', src: styledComponent},
-    ],
-    urlGiHub: "https://github.com/patriciasegantine/my-portfolio",
-    urlWebsite: "https://github.com/patriciasegantine/my-portfolio"
-  },
-  {
-    id: 4,
     name: 'Coming Soon',
     img: comingSoon,
     description: 'I\'m excited to share that there are more projects in the pipeline. Stay tuned for updates as I continue to build and expand my portfolio',

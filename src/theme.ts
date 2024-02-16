@@ -53,5 +53,5 @@ export const theme = {
   'laptop': '1024px',
   'desktop': '1400px',
   
-  'container': '1200px'
+  'container': '1400px'
 }

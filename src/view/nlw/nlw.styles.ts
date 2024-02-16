@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { SectionContainer } from "../../global.styles.ts";
-import { theme } from "../../theme.ts";
+import { SectionContainer } from "@/global.styles.ts";
+import { theme } from "@/theme.ts";
 import { Swiper } from "swiper/react";
 
 export const Carrossel = styled(Swiper)`

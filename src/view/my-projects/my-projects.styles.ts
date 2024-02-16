@@ -1,6 +1,6 @@
-import { SectionContainer } from '../../global.styles.ts'
+import { SectionContainer } from '@/global.styles.ts'
 import styled from 'styled-components'
-import { theme } from '../../theme.ts'
+import { theme } from '@/theme.ts'
 
 export const MyProjectsContainer = styled(SectionContainer)``
 
@@ -11,8 +11,13 @@ export const Card = styled.div`
   background: ${theme['background-color-3']};
   box-shadow: ${theme['shadow-primary']};
   border-radius: ${theme['border-radius-primary']};
+  border: 2px solid transparent;
 
-  transition: 0.4s;
+  &:hover{
+    border:2px solid ${theme["color-highlight"]};
+    cursor: pointer;
+    transition: .5s;
+  }
 `
 
 export const DescriptionBox = styled.div``
@@ -21,14 +26,26 @@ export const CardBoxImg = styled.div`
   width: 100%;
 
   img {
-    width: 100%;
-    border-radius: 10px 100px;
+      width: 100%;
+      border-radius: ${theme["border-radius-primary"]};
+      padding: 0;
+
+    @media (min-width: ${theme.laptop}) {
+      border-radius: 10px 100px;
+      padding-top: ${theme["spacing-small"]};
+      padding-bottom: ${theme["spacing-small"]};
+    }
+  }
+`
+
+export const CardBoxCarousel = styled(CardBoxImg)`
+  img {
     padding: ${theme["spacing-small"]};
 
     &:hover {
-      scale: 1.1;
       transition: .5s;
       cursor: pointer;
+      scale: 1.05;
     }
   }
 `

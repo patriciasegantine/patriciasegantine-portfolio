@@ -12,8 +12,8 @@ import {
   Tool,
   ToolBox
 } from "./projects-modal.styles.ts";
-import { ItemBox, LinkGitHub, LinksBox, LinksBoxItems, TitleItem } from "../../view/my-projects/my-projects.styles.ts";
-import { myProjectsInterface } from "../../type/projects.ts";
+import { ItemBox, LinkGitHub, LinksBox, LinksBoxItems, TitleItem } from "@/view/my-projects/my-projects.styles.ts";
+import { myProjectsInterface } from "@/type/projectsType.ts";
 
 interface ProjectsModal {
   open: boolean

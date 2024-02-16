@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardBoxImg, DescriptionBox, MyProjectsContainer } from './my-projects.styles.ts'
-import { SectionDescription, SectionSubtitle, SectionTitle, Tools, ToolsBox } from '../../global.styles.ts'
-
-import { myProjects } from "./my-projects-obj.ts";
-import { Grid } from "@mui/material";
-import { ProjectsModal } from "../../components/projects-modal/projects-modal.tsx";
 import { useInView } from "react-intersection-observer";
-import { useMainContext } from "../../context/main-context.tsx";
+import { Grid } from "@mui/material";
+import { Card, CardBoxImg, DescriptionBox, MyProjectsContainer } from './my-projects.styles.ts'
+import { SectionDescription, SectionSubtitle, SectionTitle, Tools, ToolsBox } from '@/global.styles.ts'
+import { myProjects } from "./my-projects-obj.ts";
+import { ProjectsModal } from "@/components/projects-modal/projects-modal.tsx";
+import { useMainContext } from "@/context/main-context.tsx";
 
 interface myProjectsProps {
   id: string;
@@ -43,7 +42,8 @@ export const MyProjects: React.FC<myProjectsProps> = ({id}) => {
       </SectionDescription>
       
       <Grid container spacing={4}>
-        {myProjects?.map((project, index) => {
+        {
+          myProjects?.map((project, index) => {
           return (
             <Grid key={project.id} item xs={12} md={6}>
               <Card>

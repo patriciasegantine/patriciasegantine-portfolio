@@ -2,7 +2,7 @@
 
 Welcome to my portfolio! This is a showcase of my work and skills in web development.
 
-<img src="./src/assets/img/my-portfolio.png" alt="Harmony Shop">
+<img src="./src/assets/img/my-portfolio.png" alt="portfolio">
 
 [Patricia Segantine Portfolio Website](https://patriciasegantine-portfolio.vercel.app/)
 

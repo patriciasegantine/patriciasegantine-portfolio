@@ -60,7 +60,7 @@ export const modalStyle = {
   border: '2px solid transparent',
   borderRadius: `${theme["border-radius-primary"]}`,
   boxShadow: 24,
-  p: {xs: 2, md: 6},
   outline: "transparent",
+  p: {xs: 2, md: 6},
   width: {xs: 350, md: 700}
 };
